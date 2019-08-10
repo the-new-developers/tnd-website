@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Reaching Recruiters
+title: React Resources
 date: 2016-12-17T15:04:10.000Z
 author: Rodney
 tags:

@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Container } from "@material-ui/core"
+import { Container, Hidden, Toolbar } from "@material-ui/core"
 import { createMuiTheme, makeStyles } from "@material-ui/core/styles"
 import { ThemeProvider } from "@material-ui/styles"
 import Header from "./header"
@@ -21,7 +21,11 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(1),
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(5),
+      padding: theme.spacing(3),
+    },
   },
 }))
 
@@ -34,6 +38,7 @@ const theme = createMuiTheme({
     },
     MuiTypography: {
       // There must be a way to do this programmatically
+      // Also having that layout.css is starting to be a pain :(
       h1: {
         "font-family": "Roboto Slab",
       },
@@ -42,15 +47,18 @@ const theme = createMuiTheme({
       },
       h3: {
         "font-family": "Roboto Slab",
+        "font-weight": 300,
       },
       h4: {
         "font-family": "Roboto Slab",
+        "font-weight": 300,
       },
       h5: {
         "font-family": "Roboto Slab",
       },
       h6: {
         "font-family": "Roboto Slab",
+        color: "#fafff7",
       },
     },
   },
@@ -61,7 +69,7 @@ const theme = createMuiTheme({
       main: "#0c0a05", // black touched by brown
     },
     secondary: {
-      main: "#3E5622", // green
+      main: "#709255", // green
     },
   },
 })
@@ -79,14 +87,12 @@ const Layout = ({ children }) => {
       <div className={classes.root}>
         <Header />
         <div>
+          <Hidden smUp implementation="css">
+            <Toolbar />
+          </Hidden>
           <Container>
             <main className={classes.content}>{children}</main>
           </Container>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
         </div>
       </div>
     </ThemeProvider>

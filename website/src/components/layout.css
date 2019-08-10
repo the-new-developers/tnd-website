@@ -46,12 +46,14 @@ template {
 }
 a {
   text-decoration: none;
+  color: #709255;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
 a:hover {
   outline-width: 0;
+  text-decoration: underline;
 }
 abbr[title] {
   border-bottom: none;
@@ -191,7 +193,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 1rem "Roboto", sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -325,7 +327,7 @@ h6 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: #709255;
+  color: #fafff7;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;

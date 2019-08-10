@@ -2,12 +2,6 @@ import { Link } from "gatsby"
 import React from "react"
 import {
   AppBar,
-  Box,
-  Card,
-  CardMedia,
-  CardContent,
-  Container,
-  Divider,
   Drawer,
   Hidden,
   IconButton,
@@ -47,10 +41,21 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    border: 0,
+  },
+  footer: {
+    position: "fixed",
+    bottom: 0,
+    marginLeft: "auto",
+    marginRight: "auto",
+    flexGrow: 1,
   },
   image: {
     display: "block",
     margin: "20px auto 0 auto",
+  },
+  list: {
+    marginTop: 50,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -88,13 +93,12 @@ const Header = () => {
             src={require("../images/logo-braces50.png")}
             className={classes.image}
           />
-          <Typography variant="h6" component="h1" align="center">
+          <Typography variant="h5" component="h1" align="center">
             THE NEW DEVELOPERS<span style={{ color: "red" }}>_</span>
           </Typography>
         </Link>
-        <Divider />
       </Hidden>
-      <List>
+      <List className={classes.list}>
         {/* 
           Eventually the below logic should be replaced by a GraphQL query that pulls information
           for all pages and then programmatically populates them as list items with links.
@@ -102,11 +106,22 @@ const Header = () => {
         {["Join our mailing list", "Events", "Mentorship", "Opportunities"].map(
           (text, index) => (
             <ListItem button key={text}>
-              <ListItemText primary={text} />
+              <ListItemText
+                primary={text}
+                primaryTypographyProps={{
+                  variant: "h6",
+                  color: "secondary",
+                }}
+              />
             </ListItem>
           )
         )}
       </List>
+      <footer className={classes.footer}>
+        <Typography variant="body1">
+          © {new Date().getFullYear()} The New Developers
+        </Typography>
+      </footer>
     </div>
   )
 
@@ -125,7 +140,7 @@ const Header = () => {
               <Menu />
             </IconButton>
             <Typography variant="h6" noWrap>
-              THE NEW DEVELOPERS
+              <Link to="/">THE NEW DEVELOPERS</Link>
             </Typography>
           </Toolbar>
         </AppBar>
@@ -149,6 +164,7 @@ const Header = () => {
         </Hidden>
         <Hidden xsDown implementation="css">
           <Drawer
+            border={0}
             classes={{
               paper: classes.drawerPaper,
             }}

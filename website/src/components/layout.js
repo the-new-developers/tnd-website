@@ -59,6 +59,7 @@ const theme = createMuiTheme({
       h6: {
         "font-family": "Roboto Slab",
         color: "#fafff7",
+        fontWeight: 300,
       },
     },
   },

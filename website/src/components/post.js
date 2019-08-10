@@ -35,7 +35,7 @@ export default function Post(props) {
         <Typography variant="h4" component="h3" className={classes.title}>
           <Link to={props.path}>{props.title}</Link>
         </Typography>
-        <Typography variant="subtitle2" className={classes.date}>
+        <Typography variant="overline" className={classes.date}>
           {props.date}
         </Typography>
         <Typography variant="subtitle1" className={classes.excerpt}>

@@ -1,3 +1,4 @@
+/* This file came with the Gatsby default starter template */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap");
 html {
@@ -44,6 +45,7 @@ template {
   display: none;
 }
 a {
+  text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }

@@ -3,14 +3,12 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-const _ = require("lodash")
+const _ = require("lodash") // Lodash provides methods that makes working with strings a lot easier.
 const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-
-  //   const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
 
   return graphql(`
     {
@@ -46,9 +44,12 @@ exports.createPages = ({ actions, graphql }) => {
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
+          // Each result will have a templateKey, which can be mapped
+          // 1:1 to a template file
           `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
         ),
-        // additional data can be passed via context
+        // Additional data can be passed via context
+        // Here we will pass the node ID
         context: {
           id,
         },

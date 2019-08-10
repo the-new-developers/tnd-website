@@ -2,6 +2,11 @@ import { Link } from "gatsby"
 import React from "react"
 import {
   AppBar,
+  Box,
+  Card,
+  CardMedia,
+  CardContent,
+  Container,
   Divider,
   Drawer,
   Hidden,
@@ -15,15 +20,24 @@ import {
 import { Menu } from "@material-ui/icons"
 import { makeStyles } from "@material-ui/core/styles"
 
-const drawerWidth = 240
+const drawerWidth = 300
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex",
-    backgroundColor: "#0c0a05",
+  appBar: {
+    marginLeft: drawerWidth,
+    [theme.breakpoints.up("sm")]: {
+      width: `calc(100% - ${drawerWidth}px)`,
+    },
   },
-  paper: {
-    background: "#0c0a05",
+  card: {
+    maxWidth: drawerWidth,
+  },
+  cardMedia: {
+    height: 55,
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
   },
   drawer: {
     [theme.breakpoints.up("sm")]: {
@@ -31,11 +45,12 @@ const useStyles = makeStyles(theme => ({
       flexShrink: 0,
     },
   },
-  appBar: {
-    marginLeft: drawerWidth,
-    [theme.breakpoints.up("sm")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-    },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  image: {
+    display: "block",
+    margin: "20px auto 0 auto",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -43,13 +58,8 @@ const useStyles = makeStyles(theme => ({
       display: "none",
     },
   },
-  toolbar: theme.mixins.toolbar,
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
+  paper: {
+    background: "#0c0a05",
   },
 }))
 
@@ -72,9 +82,18 @@ const Header = () => {
 
   const drawer = (
     <div>
-      <div className={classes.toolbar} />
-      <Typography variant="h6">THE NEW DEVELOPERS</Typography>
-      <Divider />
+      <Hidden xsDown implementation="css">
+        <Link to="/">
+          <img
+            src={require("../images/logo-braces50.png")}
+            className={classes.image}
+          />
+          <Typography variant="h6" component="h1" align="center">
+            THE NEW DEVELOPERS<span style={{ color: "red" }}>_</span>
+          </Typography>
+        </Link>
+        <Divider />
+      </Hidden>
       <List>
         {/* 
           Eventually the below logic should be replaced by a GraphQL query that pulls information

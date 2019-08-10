@@ -33,6 +33,7 @@ const theme = createMuiTheme({
       },
     },
     MuiTypography: {
+      // There must be a way to do this programmatically
       h1: {
         "font-family": "Roboto Slab",
       },

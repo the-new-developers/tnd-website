@@ -11,7 +11,7 @@ public_folder: /images
 
 # Collections contain the different types of content we will create and publish
 collections:
- - name: "blog"
+  - name: "blog"
     label: "Blog"
     folder: "website/src/posts"
     create: true

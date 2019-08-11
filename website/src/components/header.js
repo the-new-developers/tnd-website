@@ -99,9 +99,9 @@ const Header = () => {
         </Link>
       </Hidden>
       <List className={classes.list}>
-        <ListItem button href="/events">
+        <ListItem button component={Link} to="/events">
           <ListItemText
-            primary={<Link to="/events">Events</Link>}
+            primary="Events"
             primaryTypographyProps={{
               variant: "h6",
               color: "secondary",

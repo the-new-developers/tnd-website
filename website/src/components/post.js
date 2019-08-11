@@ -54,7 +54,17 @@ export default function Post(props) {
   const isEvent = info.templateKey === "event-post"
 
   // If the post is an event that has a link, default to that.
-  const path = info.link ? info.link : info.path
+  let path = info.link ? info.link : props.path
+
+  // For some reason, if the link points to an external source, it must
+  // start with http:// or https:// or else Gatsby will assume it should
+  // navigate to an internal page - even when using the href prop of the
+  // MUI Button component. Until we can figure out another way around it,
+  // it's easiest for now to simply add the protocol if the string does
+  // not already contain it.
+  if (info.link && !path.includes("http")) {
+    path = "http://" + path
+  }
 
   // This is the text above event posts.
   let eventType
@@ -68,9 +78,9 @@ export default function Post(props) {
 
   // The button text will vary depending on the post type.
   let buttonText
-  if (isEvent && info.link) {
+  if (isEvent && info.type === "COM") {
     buttonText = "More Info"
-  } else if (isEvent) {
+  } else if (isEvent && info.type === "TND") {
     buttonText = "Register"
   } else {
     buttonText = "Read more"
@@ -106,14 +116,37 @@ export default function Post(props) {
         <Typography variant="subtitle1" className={classes.excerpt}>
           {props.info.excerpt}
         </Typography>
-        <Button
-          variant={isEvent && !info.link ? "contained" : "outlined"}
-          href={path}
-          color="secondary"
-          className={classes.button}
-        >
-          {buttonText}
-        </Button>
+        {/* TODO: Declare a single MUI Button that uses the Link component when 
+        routing internally, and href when info.link is not null. */}
+        {info.link ? (
+          <Button
+            variant={isEvent && info.type === "TND" ? "contained" : "outlined"}
+            href={path}
+            color="secondary"
+            className={classes.button}
+          >
+            {buttonText}
+          </Button>
+        ) : (
+          <Button
+            variant={isEvent && !info.link ? "contained" : "outlined"}
+            component={Link}
+            to={path}
+            color="secondary"
+            className={classes.button}
+          >
+            {buttonText}
+          </Button>
+        )}
+        {/* <Button
+            variant={isEvent && info.type === "TND" ? "contained" : "outlined"}
+            component={Link}
+            to={path}
+            color="secondary"
+            className={classes.button}
+          >
+            {buttonText}
+          </Button> */}
       </CardContent>
       {info.featured ? <Divider className={classes.divider} /> : null}
     </Card>

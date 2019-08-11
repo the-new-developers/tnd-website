@@ -8,7 +8,7 @@ export default function Tag({
   const { frontmatter } = markdownRemark
   return (
     <div>
-      <div>{frontmatter.title}</div>
+      <div></div>
     </div>
   )
 }

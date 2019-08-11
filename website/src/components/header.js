@@ -118,7 +118,7 @@ const Header = () => {
         )}
       </List>
       <footer className={classes.footer}>
-        <Typography variant="body1">
+        <Typography variant="overline">
           © {new Date().getFullYear()} The New Developers
         </Typography>
       </footer>

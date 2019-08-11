@@ -2,12 +2,21 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import Post from "../components/post"
-import { Typography } from "@material-ui/core"
+import { Typography, Divider } from "@material-ui/core"
 
-class BlogRoll extends React.Component {
+class EventRoll extends React.Component {
   render() {
     const { data } = this.props
     const posts = data.allMarkdownRemark.edges
+
+    // We use Array.prototype.find() here because
+    // we are only expecting one featured post.
+    const featuredPost =
+      posts &&
+      posts.find(({ node }) => {
+        return node.frontmatter.featured
+      })
+    console.log(featuredPost)
     return (
       <div>
         <Typography
@@ -15,16 +24,23 @@ class BlogRoll extends React.Component {
           component="h2"
           style={{ fontWeight: "300", color: "#FAFFF7" }}
         >
-          Latest Posts
+          Events
         </Typography>
+        {featuredPost ? (
+          <div>
+            <Post
+              path={featuredPost.node.fields.slug}
+              info={featuredPost.node}
+            />{" "}
+          </div>
+        ) : null}
         {posts &&
           posts.map(({ node }) => {
-            const title = node.frontmatter.title
-            const date = node.frontmatter.date
-            const excerpt = node.excerpt
             return (
-              <div key={node.id} style={{ marginTop: "50px" }}>
-                <Post path={node.fields.slug} info={node} />
+              <div key={node.id}>
+                {node.frontmatter.featured ? null : (
+                  <Post path={node.fields.slug} info={node} />
+                )}
               </div>
             )
           })}
@@ -36,7 +52,7 @@ class BlogRoll extends React.Component {
 // propTypes allows us to define what type we expect the props to be.
 // If the props do not conform to their expected type, we will be able
 // to see a warning in the browser's developers tools.
-BlogRoll.propTypes = {
+EventRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -49,10 +65,10 @@ BlogRoll.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-      query BlogRollQuery {
+      query EventRollQuery {
         allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          sort: { order: ASC, fields: [frontmatter___date] }
+          filter: { frontmatter: { templateKey: { eq: "event-post" } } }
         ) {
           edges {
             node {
@@ -64,13 +80,17 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
+                date(formatString: "h:mma dddd, MMMM Do YYYY")
+                where
+                link
+                featured
+                type
               }
             }
           }
         }
       }
     `}
-    render={data => <BlogRoll data={data} />}
+    render={data => <EventRoll data={data} />}
   />
 )

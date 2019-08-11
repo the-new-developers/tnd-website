@@ -36,6 +36,11 @@ const theme = createMuiTheme({
         "background-color": "#0c0a05",
       },
     },
+    MuiDivider: {
+      root: {
+        "background-color": "#709255",
+      },
+    },
     MuiTypography: {
       // There must be a way to do this programmatically
       // Also having that layout.css is starting to be a pain :(

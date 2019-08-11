@@ -94,28 +94,20 @@ const Header = () => {
             className={classes.image}
           />
           <Typography variant="h5" component="h1" align="center">
-            THE NEW DEVELOPERS<span style={{ color: "red" }}>_</span>
+            THE NEW DEVELOPERS<span style={{ color: "#CC522C" }}>_</span>
           </Typography>
         </Link>
       </Hidden>
       <List className={classes.list}>
-        {/* 
-          Eventually the below logic should be replaced by a GraphQL query that pulls information
-          for all pages and then programmatically populates them as list items with links.
-         */}
-        {["Join our mailing list", "Events", "Mentorship", "Opportunities"].map(
-          (text, index) => (
-            <ListItem button key={text}>
-              <ListItemText
-                primary={text}
-                primaryTypographyProps={{
-                  variant: "h6",
-                  color: "secondary",
-                }}
-              />
-            </ListItem>
-          )
-        )}
+        <ListItem button href="/events">
+          <ListItemText
+            primary={<Link to="/events">Events</Link>}
+            primaryTypographyProps={{
+              variant: "h6",
+              color: "secondary",
+            }}
+          />
+        </ListItem>
       </List>
       <footer className={classes.footer}>
         <Typography variant="overline">

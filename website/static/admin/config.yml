@@ -44,8 +44,19 @@ collections:
           widget: "hidden",
           default: "event-post",
         }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Event Name", name: "title", widget: "string" }
+      - { label: "Featured Event", name: "featured", widget: "boolean" }
+      - {
+          label: "Event Type",
+          name: "type",
+          widget: "select",
+          default: 
+            - { label: "The New Developers", value: "TND" },
+          options: 
+            - { label: "The New Developers", value: "TND" }
+            - { label: "Community", value: "COM" }
+        }
+      - { label: "When", name: "date", widget: "datetime" }
+      - { label: "Where", name: "where", widget: "string" }
+      - { label: "Details", name: "body", widget: "markdown" }
+      - { label: "Link", name: "link", widget: "string", required: false, hint: "This should link to an external page." }

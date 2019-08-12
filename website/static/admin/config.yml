@@ -59,4 +59,4 @@ collections:
       - { label: "When", name: "date", widget: "datetime" }
       - { label: "Where", name: "where", widget: "string" }
       - { label: "Details", name: "body", widget: "markdown" }
-      - { label: "Link", name: "link", widget: "string", required: false, hint: "This should link to an external page." }
+      - { label: "Link", name: "link", widget: "string", required: false, hint: "This should link to your external registration page." }

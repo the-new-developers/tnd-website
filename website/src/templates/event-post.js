@@ -35,7 +35,8 @@ export default function EventPost({
   let path = frontmatter.link
 
   // Gatsby seems to hijack all <a> tags and, if they do not begin with http://
-  // or https://, appends the path to the domain.
+  // or https://, appends the path to the domain instead of setting the URL as
+  // expected.
   if (path && !path.includes("http://")) path = "http://" + path
 
   return (

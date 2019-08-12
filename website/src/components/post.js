@@ -11,7 +11,7 @@ import {
 
 const useStyles = makeStyles(theme => ({
   button: {
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(2),
   },
   card: {
     flexGrow: 1,
@@ -53,8 +53,12 @@ export default function Post(props) {
   // We need different information depending on the type of post.
   const isEvent = info.templateKey === "event-post"
 
-  // If the post is an event that has a link, default to that.
-  let path = info.link ? info.link : props.path
+  // It makes sense to give our own events priority.
+  const isTNDWorkshop = info.type === "TND"
+
+  // Only TND workshops can have a register button that leads to an external link on
+  // blog or event rolls.
+  let path = info.link && isTNDWorkshop ? info.link : props.path
 
   // For some reason, if the link points to an external source, it must
   // start with http:// or https:// or else Gatsby will assume it should
@@ -62,7 +66,7 @@ export default function Post(props) {
   // MUI Button component. Until we can figure out another way around it,
   // it's easiest for now to simply add the protocol if the string does
   // not already contain it.
-  if (info.link && !path.includes("http")) {
+  if (info.link && isTNDWorkshop && !path.includes("http")) {
     path = "http://" + path
   }
 
@@ -70,7 +74,7 @@ export default function Post(props) {
   let eventType
   if (info.featured) {
     eventType = "Next Workshop"
-  } else if (info.type === "TND") {
+  } else if (isTNDWorkshop) {
     eventType = "TND Workshop"
   } else {
     eventType = "Community Event"
@@ -78,10 +82,12 @@ export default function Post(props) {
 
   // The button text will vary depending on the post type.
   let buttonText
-  if (isEvent && info.type === "COM") {
+  if (isEvent && !isTNDWorkshop) {
+    // For now, we will hide any registration button inside the post.
     buttonText = "More Info"
-  } else if (isEvent && info.type === "TND") {
-    buttonText = "Register"
+  } else if (isEvent && isTNDWorkshop) {
+    // TND events should always have a link, but this is in case they do not.
+    buttonText = info.link ? "Register" : "More Info"
   } else {
     buttonText = "Read more"
   }
@@ -118,9 +124,9 @@ export default function Post(props) {
         </Typography>
         {/* TODO: Declare a single MUI Button that uses the Link component when 
         routing internally, and href when info.link is not null. */}
-        {info.link ? (
+        {info.link && isTNDWorkshop ? (
           <Button
-            variant={isEvent && info.type === "TND" ? "contained" : "outlined"}
+            variant="contained"
             href={path}
             color="secondary"
             className={classes.button}
@@ -129,7 +135,7 @@ export default function Post(props) {
           </Button>
         ) : (
           <Button
-            variant={isEvent && !info.link ? "contained" : "outlined"}
+            variant="outlined"
             component={Link}
             to={path}
             color="secondary"

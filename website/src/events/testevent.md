@@ -5,7 +5,7 @@ featured: true
 type: TND
 date: 2019-09-25T18:30:10.000Z
 where: Mohawk College
-link: https://google.com
+link:
 ---
 
 ### This is a test markdown file

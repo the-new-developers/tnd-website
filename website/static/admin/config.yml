@@ -50,8 +50,7 @@ collections:
           label: "Event Type",
           name: "type",
           widget: "select",
-          default: 
-            - { label: "The New Developers", value: "TND" },
+          default: ["The New Developers"],
           options: 
             - { label: "The New Developers", value: "TND" }
             - { label: "Community", value: "COM" }

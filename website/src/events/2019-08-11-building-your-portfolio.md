@@ -3,7 +3,7 @@ templateKey: event-post
 title: Building Your Portfolio
 featured: true
 type: The New Developers
-date: 2019-09-25T21:30:00.000Z
+date: 2019-09-25T17:30:00.000Z
 where: 'Mohawk College, Room TBD'
 link: thenewdevelopers.com
 ---

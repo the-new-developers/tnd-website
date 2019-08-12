@@ -54,7 +54,7 @@ export default function Post(props) {
   const isEvent = info.templateKey === "event-post"
 
   // It makes sense to give our own events priority.
-  const isTNDWorkshop = info.type === "TND"
+  const isTNDWorkshop = info.type === "The New Developers"
 
   // Only TND workshops can have a register button that leads to an external link on
   // blog or event rolls.

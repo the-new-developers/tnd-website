@@ -42,7 +42,9 @@ export default function EventPost({
   return (
     <Layout>
       <Typography variant="overline">
-        {frontmatter.type === "TND" ? "TND Workshop" : "Community Event"}
+        {frontmatter.type === "The New Developers"
+          ? "TND Workshop"
+          : "Community Event"}
       </Typography>
       <Typography variant="h2" className={classes.title}>
         <Link to={markdownRemark.fields.slug}>{frontmatter.title}</Link>

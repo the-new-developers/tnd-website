@@ -16,6 +16,8 @@ collections:
     label: "Blog"
     folder: "website/src/posts"
     create: true
+    editor:
+      preview: false
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       # We will use the hidden templateKey field to map files to their corresponding template
@@ -29,12 +31,14 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
 
   - name: "events"
     label: "Events"
     folder: "website/src/events"
     create: true
+    editor:
+      preview: false
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       # We will use the hidden templateKey field to map files to their corresponding template
@@ -60,6 +64,5 @@ collections:
           label: "Link",
           name: "link",
           widget: "string",
-          required: false,
           hint: "This should link to your external registration page.",
         }

@@ -5,7 +5,7 @@ featured: false
 type: Community
 date: 2019-08-14T18:30:00.000Z
 where: The Winking Judge
-link: 'http://www.codercamphamilton.com/Events/2019/08/14/CoderCamp-S19E08'
+link: 'https://www.meetup.com/CoderCamp-Hamilton/events/stdttmyzlbsb/'
 author: Rodney
 ---
 CoderCamp Hamilton is a monthly meetup / mini-conference for local software developers to learn tools, techniques, and technologies from one another in a casual and friendly setting. We meet to talk about coding, software development, and technology to learn from each other and get better at what we do in the process.

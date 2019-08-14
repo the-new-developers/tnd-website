@@ -1,8 +1,9 @@
 /* This file came with the Gatsby default starter template */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap');
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   background-color: #0c0a05;
@@ -193,7 +194,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 1rem "Roboto", sans-serif;
+  font: 1rem "Open Sans", sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -208,7 +209,7 @@ html {
 }
 body {
   color: #fafff7;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

@@ -11,7 +11,7 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core"
-import { Menu } from "@material-ui/icons"
+import { Menu, OpenInNew } from "@material-ui/icons"
 import { makeStyles } from "@material-ui/core/styles"
 
 const drawerWidth = 300
@@ -108,12 +108,23 @@ const Header = () => {
             }}
           />
         </ListItem>
+        <ListItem button component="a" href="https://surveymonkey.com" target="_blank">
+          <ListItemText
+            primary="Join Our Mailing List"
+            primaryTypographyProps={{
+              variant: "h6",
+              color: "secondary",
+            }}
+          /> <OpenInNew color="secondary"/>
+        </ListItem>
       </List>
+      <div>
       <footer className={classes.footer}>
         <Typography variant="overline">
-          © {new Date().getFullYear()} The New Developers
+        © {new Date().getFullYear()} The New Developers
         </Typography>
       </footer>
+      </div>
     </div>
   )
 

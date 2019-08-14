@@ -38,7 +38,7 @@ const theme = createMuiTheme({
     },
     MuiDivider: {
       root: {
-        "background-color": "#709255",
+        "background-color": "#3e5622",
       },
     },
     MuiTypography: {
@@ -62,8 +62,20 @@ const theme = createMuiTheme({
         "font-family": "Roboto Slab",
       },
       h6: {
-        "font-family": "Roboto Slab",
+        "font-family": "Open Sans",
         color: "#fafff7",
+        fontWeight: 300,
+      },
+      body: {
+        "font-family": "Open Sans",
+        fontWeight: 300,
+      },
+      overline: {
+        "font-family": "Open Sans",
+        fontWeight: 300,
+      },
+      subtitle1: {
+        "font-family": "Open Sans",
         fontWeight: 300,
       },
     },
@@ -76,7 +88,11 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: "#709255", // green
+      dark: "#CC522C", // red
     },
+    error: {
+      main: "#CC522C", // red
+    }
   },
 })
 

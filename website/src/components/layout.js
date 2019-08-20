@@ -62,7 +62,7 @@ const theme = createMuiTheme({
         "font-family": "Roboto Slab",
       },
       h6: {
-        "font-family": "Open Sans",
+        "font-family": "Roboto Slab",
         color: "#fafff7",
         fontWeight: 300,
       },

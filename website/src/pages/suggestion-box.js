@@ -1,8 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
-import BlogRoll from "../components/blogroll"
 import Layout from "../components/layout"
-import Post from "../components/post"
 import SEO from "../components/seo"
 import { makeStyles } from "@material-ui/core/styles"
 import { Button, Typography } from "@material-ui/core"
@@ -23,19 +20,19 @@ export default function SuggestionBox() {
                 <label>
                     Name
                     <input type="text" name="name" id="name" />
-                </label>
+                </label><br />
                 <label>
                     Email
                     <input type="email" name="email" id="email" />
-                </label>
+                </label><br />
                 <label>
                     Subject
                     <input type="text" name="subject" id="subject" />
-                </label>
+                </label><br />
                 <label>
                     Message
                     <textarea name="message" id="message" rows="5" />
-                </label>
+                </label><br />
                 <button type="submit">Send</button>
                 <input type="reset" value="Clear" />
             </form>

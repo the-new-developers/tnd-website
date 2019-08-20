@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 const EventsPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Events" />
     <EventRoll />
   </Layout>
 )

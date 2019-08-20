@@ -33,7 +33,7 @@ export default function BlogPost({
         <Typography variant="h6">Written by {frontmatter.author}</Typography>
         <Typography variant="overline">{frontmatter.date}</Typography>
       </div>
-      <Typography variant="body1" className={classes.body}>
+      <Typography variant="body" className={classes.body}>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </Typography>
     </Layout>

@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import {
   AppBar,
+  Button,
   Drawer,
   Hidden,
   IconButton,
@@ -11,7 +12,7 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core"
-import { Menu, OpenInNew } from "@material-ui/icons"
+import { Menu, OpenInNew, MailOutline } from "@material-ui/icons"
 import { makeStyles } from "@material-ui/core/styles"
 
 const drawerWidth = 300
@@ -57,6 +58,12 @@ const useStyles = makeStyles(theme => ({
   list: {
     marginTop: 50,
   },
+  mailButton: {
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
+  },
   menuButton: {
     marginRight: theme.spacing(2),
     [theme.breakpoints.up("sm")]: {
@@ -65,6 +72,10 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     background: "#0c0a05",
+  },
+  rightToolbar: {
+    marginLeft: 'auto',
+    marginRight: -12,
   },
 }))
 
@@ -121,7 +132,7 @@ const Header = () => {
       <div>
       <footer className={classes.footer}>
         <Typography variant="overline">
-        © {new Date().getFullYear()} The New Developers
+        &nbsp;© {new Date().getFullYear()} The New Developers
         </Typography>
       </footer>
       </div>
@@ -145,6 +156,17 @@ const Header = () => {
             <Typography variant="h6" noWrap>
               <Link to="/">THE NEW DEVELOPERS</Link>
             </Typography>
+            <section className={classes.rightToolbar}>
+            <IconButton 
+            color="inherit" 
+            aria-label="join mailing list"
+            href="https://www.surveymonkey.com/r/XNR88XG" 
+            target="_blank"
+            className={classes.mailButton}
+            >
+              <MailOutline />
+            </IconButton>
+            </section>
           </Toolbar>
         </AppBar>
       </Hidden>

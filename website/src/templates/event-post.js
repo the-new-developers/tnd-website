@@ -37,7 +37,7 @@ export default function EventPost({
   // Gatsby seems to hijack all <a> tags and, if they do not begin with http://
   // or https://, appends the path to the domain instead of setting the URL as
   // expected.
-  if (path && !path.includes("http://")) path = "http://" + path
+  if (path && !path.includes("http")) path = "http://" + path
 
   return (
     <Layout>

@@ -9,3 +9,5 @@ link: thenewdevelopers.com
 author: Rodney
 ---
 Get started with Git and learn how to contribute to an open source project with Dat Nguyen.
+
+\*registration for this event is not currently open, please check back after the first week of classes.

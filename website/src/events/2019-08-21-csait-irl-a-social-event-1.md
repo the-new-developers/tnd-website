@@ -3,7 +3,7 @@ templateKey: event-post
 title: 'CSAIT IRL: A Social Event.'
 featured: true
 type: The New Developers
-date: 2019-09-19T23:00:26.738Z
+date: 2019-09-19T19:00:00.000Z
 where: 'The Cellar, Mohawk Fennell Campus (behind The Arnie)'
 link: 'https://www.facebook.com/events/1390701137753482/'
 author: Andrew

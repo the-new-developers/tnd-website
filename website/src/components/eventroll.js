@@ -68,7 +68,12 @@ export default () => (
       query EventRollQuery {
         allMarkdownRemark(
           sort: { order: ASC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "event-post" } } }
+          filter: {
+            frontmatter: {
+              templateKey: { eq: "event-post" }
+              date: { gt: "2019-09-01" }
+            }
+          }
         ) {
           edges {
             node {

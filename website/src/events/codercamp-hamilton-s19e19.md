@@ -3,7 +3,7 @@ templateKey: event-post
 title: CoderCamp Hamilton s19e19
 featured: false
 type: Community
-date: 2019-09-11T23:30:00.000Z
+date: 2019-09-11T18:30:00.000Z
 where: Pheasant Plucker
 link: 'https://www.meetup.com/CoderCamp-Hamilton/events/stdttmyzmbpb/'
 author: Rodney

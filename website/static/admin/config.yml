@@ -39,7 +39,7 @@ collections:
     create: true
     editor:
       preview: false
-    slug: "{{date}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       # We will use the hidden templateKey field to map files to their corresponding template
       - {

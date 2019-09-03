@@ -57,7 +57,7 @@ collections:
           default: ["The New Developers"],
           options: ["The New Developers", "Community"],
         }
-      - { label: "When", name: "date", widget: "datetime" }
+      - { label: "When", name: "date", widget: "datetime", timeFormat: true }
       - { label: "Where", name: "where", widget: "string" }
       - { label: "Details", name: "body", widget: "markdown" }
       - {

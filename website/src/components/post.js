@@ -81,16 +81,7 @@ export default function Post(props) {
   }
 
   // The button text will vary depending on the post type.
-  let buttonText
-  if (isEvent && !isTNDWorkshop) {
-    // For now, we will hide any registration button inside the post.
-    buttonText = "More Info"
-  } else if (isEvent && isTNDWorkshop) {
-    // TND events should always have a link, but this is in case they do not.
-    buttonText = info.link ? "Register" : "More Info"
-  } else {
-    buttonText = "Read more"
-  }
+  let buttonText = isEvent ? "More Info" : "Read More"
 
   return (
     <Card className={classes.card} elevation={0}>
@@ -122,28 +113,15 @@ export default function Post(props) {
         <Typography variant="subtitle1" className={classes.excerpt}>
           {props.info.excerpt}
         </Typography>
-        {/* TODO: Declare a single MUI Button that uses the Link component when 
-        routing internally, and href when info.link is not null. */}
-        {info.link && isTNDWorkshop ? (
-          <Button
-            variant="contained"
-            href={path}
-            color="secondary"
-            className={classes.button}
-          >
-            {buttonText}
-          </Button>
-        ) : (
-          <Button
-            variant="outlined"
-            component={Link}
-            to={path}
-            color="secondary"
-            className={classes.button}
-          >
-            {buttonText}
-          </Button>
-        )}
+        <Button
+          variant="outlined"
+          component={Link}
+          to={path}
+          color="secondary"
+          className={classes.button}
+        >
+          {buttonText}
+        </Button>
         {/* <Button
             variant={isEvent && info.type === "TND" ? "contained" : "outlined"}
             component={Link}

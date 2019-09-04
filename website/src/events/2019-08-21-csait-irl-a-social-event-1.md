@@ -1,13 +1,13 @@
 ---
 templateKey: event-post
-title: 'CSAIT IRL: A Social Event.'
+title: "CSAIT IRL: A Social Event."
 featured: true
 type: The New Developers
 date: 2019-09-19T18:00:00.000Z
-where: 'The Cellar, Mohawk Fennell Campus (behind The Arnie)'
-link: 'https://www.facebook.com/events/1390701137753482/'
+where: "The Cellar, Mohawk Fennell Campus (behind The Arnie)"
 author: Andrew
 ---
+
 We're having a party at The Cellar on the Mohawk Fennell Campus, and **ALL** CSAIT students and faculty are invited! The merriment bursts forth at 6:00 pm on Thursday, September 19th, sweeping away all in its path until 10:00 pm -- at which moment a winning name will be drawn in our illustrious, esteemed, awe-inspiring 50/50 draw! (50/50 tickets can be purchased from Jen, Rodney or Andrew. Or email us: contact@thenewdevelopers.com)
 
 There will be **FREE NACHOS** for all (until they run out!) and plenty of opportunities to win mysterious, irresistible, death-defying prizes (some worth more than a whole dollar!) in our captivating, ferocious, incomprehensible Trivia Challenge! Most of all, there will be uplifting, soul-cleansing, fever-inducing music, a noble bar selling glorious drinks, and... **PEOPLE!**

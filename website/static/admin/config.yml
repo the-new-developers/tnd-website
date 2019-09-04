@@ -61,10 +61,11 @@ collections:
       - { label: "Where", name: "where", widget: "string" }
       - { label: "Details", name: "body", widget: "markdown" }
       - {
-          label: "Link",
+          label: "Registration Link",
           name: "link",
           widget: "string",
           hint: "This should link to your external registration page.",
+          required: false,
         }
       - {
         label: "Author",

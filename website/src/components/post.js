@@ -58,17 +58,7 @@ export default function Post(props) {
 
   // Only TND workshops can have a register button that leads to an external link on
   // blog or event rolls.
-  let path = info.link && isTNDWorkshop ? info.link : props.path
-
-  // For some reason, if the link points to an external source, it must
-  // start with http:// or https:// or else Gatsby will assume it should
-  // navigate to an internal page - even when using the href prop of the
-  // MUI Button component. Until we can figure out another way around it,
-  // it's easiest for now to simply add the protocol if the string does
-  // not already contain it.
-  if (info.link && isTNDWorkshop && !path.includes("http")) {
-    path = "http://" + path
-  }
+  let path = props.path
 
   // This is the text above event posts.
   let eventType
@@ -122,15 +112,6 @@ export default function Post(props) {
         >
           {buttonText}
         </Button>
-        {/* <Button
-            variant={isEvent && info.type === "TND" ? "contained" : "outlined"}
-            component={Link}
-            to={path}
-            color="secondary"
-            className={classes.button}
-          >
-            {buttonText}
-          </Button> */}
       </CardContent>
       {info.featured ? <Divider className={classes.divider} /> : null}
     </Card>

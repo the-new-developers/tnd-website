@@ -49,7 +49,7 @@ collections:
           default: "event-post",
         }
       - { label: "Event Name", name: "title", widget: "string" }
-      - { label: "Featured Event", name: "featured", widget: "boolean" }
+      - { label: "Featured Event", name: "featured", widget: "boolean", default: false }
       - {
           label: "Event Type",
           name: "type",

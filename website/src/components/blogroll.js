@@ -19,9 +19,6 @@ class BlogRoll extends React.Component {
         </Typography>
         {posts &&
           posts.map(({ node }) => {
-            const title = node.frontmatter.title
-            const date = node.frontmatter.date
-            const excerpt = node.excerpt
             return (
               <div key={node.id} style={{ marginTop: "50px" }}>
                 <Post path={node.fields.slug} info={node} />

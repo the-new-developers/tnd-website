@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import React from "react"
 import {
   AppBar,
-  Button,
   Drawer,
   Hidden,
   IconButton,
@@ -74,7 +73,7 @@ const useStyles = makeStyles(theme => ({
     background: "#0c0a05",
   },
   rightToolbar: {
-    marginLeft: 'auto',
+    marginLeft: "auto",
     marginRight: -12,
   },
 }))
@@ -103,6 +102,7 @@ const Header = () => {
           <img
             src={require("../images/logo-braces50.png")}
             className={classes.image}
+            alt="Logo"
           />
           <Typography variant="h5" component="h1" align="center">
             THE NEW DEVELOPERS<span style={{ color: "#CC522C" }}>_</span>
@@ -119,22 +119,37 @@ const Header = () => {
             }}
           />
         </ListItem>
-        <ListItem button component="a" href="https://www.surveymonkey.com/r/XNR88XG" target="_blank">
+        <ListItem
+          button
+          component="a"
+          href="https://www.surveymonkey.com/r/XNR88XG"
+          target="_blank"
+        >
           <ListItemText
             primary="Join Our Mailing List"
             primaryTypographyProps={{
               variant: "h6",
               color: "secondary",
             }}
-          /> <OpenInNew color="secondary"/>
+          />{" "}
+          <OpenInNew color="secondary" />
+        </ListItem>
+        <ListItem button component={Link} to="/about">
+          <ListItemText
+            primary="About Us"
+            primaryTypographyProps={{
+              variant: "h6",
+              color: "secondary",
+            }}
+          />
         </ListItem>
       </List>
       <div>
-      <footer className={classes.footer}>
-        <Typography variant="overline">
-        &nbsp;© {new Date().getFullYear()} The New Developers
-        </Typography>
-      </footer>
+        <footer className={classes.footer}>
+          <Typography variant="overline">
+            &nbsp;© {new Date().getFullYear()} The New Developers
+          </Typography>
+        </footer>
       </div>
     </div>
   )
@@ -157,15 +172,15 @@ const Header = () => {
               <Link to="/">THE NEW DEVELOPERS</Link>
             </Typography>
             <section className={classes.rightToolbar}>
-            <IconButton 
-            color="inherit" 
-            aria-label="join mailing list"
-            href="https://www.surveymonkey.com/r/XNR88XG" 
-            target="_blank"
-            className={classes.mailButton}
-            >
-              <MailOutline />
-            </IconButton>
+              <IconButton
+                color="inherit"
+                aria-label="join mailing list"
+                href="https://www.surveymonkey.com/r/XNR88XG"
+                target="_blank"
+                className={classes.mailButton}
+              >
+                <MailOutline />
+              </IconButton>
             </section>
           </Toolbar>
         </AppBar>

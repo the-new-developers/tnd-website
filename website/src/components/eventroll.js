@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import Post from "../components/post"
-import { Typography, Divider } from "@material-ui/core"
+import { Typography } from "@material-ui/core"
 
 class EventRoll extends React.Component {
   render() {

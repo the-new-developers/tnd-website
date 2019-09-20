@@ -84,7 +84,7 @@ export default function AboutPage() {
             height: 0,
           }}
         >
-          <iframe
+          {/* <iframe
             title="Jen Armstrong"
             style={{
               position: "absolute",
@@ -96,7 +96,8 @@ export default function AboutPage() {
             src="https://www.youtube.com/embed/PpUYNhSU_nM"
             frameBorder="0"
             allowFullScreen
-          ></iframe>
+          ></iframe> */}
+          Jen took a video that was too awesome to be seen by human eyes. Luckily, her dog is qualified to work on the editing.
         </div>
       </div>
       <div className={classes.entry}>

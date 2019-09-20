@@ -1,10 +1,10 @@
 ---
 templateKey: event-post
-title: "s01e02: Building Your Portfolio"
-featured: false
+title: 's01e02: Building Your Portfolio'
+featured: true
 type: The New Developers
 date: 2019-09-25T17:30:00.000Z
-where: "Mohawk College Fennell Campus, Room EA006"
+where: 'Mohawk College Fennell Campus, Room EA006'
 link: >-
   https://www.eventbrite.com/e/the-new-developers-s01e02-building-a-portfolio-tickets-71360484129
 author: Rodney

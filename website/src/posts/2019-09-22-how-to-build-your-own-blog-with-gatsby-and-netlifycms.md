@@ -37,7 +37,7 @@ This tutorial will walk through the quickest way to get a blog up and running th
 
 **Notes:**
 
-This is a similar process to what I used to set up the New Developers website. While I had experience using Vue to build Single-Page Applications, I wanted to try using a static site generator as I had read that they're better-suited for our use case - serving up static content like blog and event posts. [You can read more about this benefit here.](https://www.reddit.com/r/reactjs/comments/9hqwls/begginer_question_about_running_react/e6e84qi/)
+This is a similar process to what I used to set up the New Developers website. While I had experience using Vue to build Single-Page Applications, I wanted to try using a static site generator as I had read that they're better-suited for our use case - serving up static content like blog and event posts. You can [read more about how Gatsby works here](https://www.mediacurrent.com/what-is-gatsby.js), and [here is the comment that made everything really click for me](https://www.reddit.com/r/reactjs/comments/9hqwls/begginer_question_about_running_react/e6e84qi/).
 
 With my background in Vue I initially turned to [VuePress](https://vuepress.vuejs.org/) but got stuck on an asyncronous call that didn't seem to work (and which, being pretty new to all of this, I found myself unable to debug) so I decided to cut my losses and dived into to world of React via Gatsby. 
 

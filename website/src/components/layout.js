@@ -66,7 +66,7 @@ const theme = createMuiTheme({
         color: "#fafff7",
         fontWeight: 300,
       },
-      body: {
+      body1: {
         "font-family": "Open Sans",
         fontWeight: 300,
       },
@@ -92,7 +92,7 @@ const theme = createMuiTheme({
     },
     error: {
       main: "#CC522C", // red
-    }
+    },
   },
 })
 

@@ -4,7 +4,7 @@ title: 's01e03: Mastering the Interview'
 featured: false
 type: The New Developers
 date: 2019-10-30T17:30:00.000Z
-where: 'Mohawk College Fennel Campus, room EA006'
+where: 'Mohawk College Fennel Campus, room EA105'
 link: >-
   https://www.eventbrite.com/e/s01e03-mastering-the-interview-tickets-74293837869
 author: Rodney

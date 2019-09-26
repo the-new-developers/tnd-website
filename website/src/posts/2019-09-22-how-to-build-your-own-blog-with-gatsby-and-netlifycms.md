@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: How to Build Your Own Blog with Gatsby and NetlifyCMS
-date: 2019-09-22T17:59:45.511Z
+date: 2019-09-26T17:59:00.000Z
 author: Rodney Barnes
 ---
 This tutorial will walk through the quickest way to get a blog up and running that uses Gatsby on the front end and NetlifyCMS to manage content. We'll be using a starter template and deploying through Netlify as it is a relatively friction-less process, and by the end you'll have a live website that you can begin tweaking to your own taste.

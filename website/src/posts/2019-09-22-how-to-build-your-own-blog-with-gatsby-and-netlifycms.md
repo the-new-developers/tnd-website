@@ -26,7 +26,8 @@ This tutorial will walk through the quickest way to get a blog up and running th
 4. Once authenticated, choose a repository name and click 'Save and Deploy'. Netlify will create a repo in your Github account with a copy of the files from the template, then automatically build and deploy that repo with a randomly-generated URL.
 5. While waiting for your site to deploy, open a terminal and navigate to the directory where you would like to host a local copy of the blog.
 6. Type in this command to clone your repo, replacing the account and repository names with your own:\
-      `$ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git`
+   \
+     `$ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git`
 7. Once the files have finished copying, `cd` into the project directory and type `npm install` to install the project's dependencies. This will take some time.
 8. Once Netlify has finished building and deploying the site, you should be able to navigate to the URL and explore the website.
 9. In order to access the CMS, you will need to set up Netlify Identity. [You can follow the instructions here to do so.](https://www.netlify.com/docs/identity/#getting-started) 

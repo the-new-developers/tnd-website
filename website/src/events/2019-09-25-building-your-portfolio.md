@@ -1,7 +1,7 @@
 ---
 templateKey: event-post
 title: 's01e02: Building Your Portfolio'
-featured: true
+featured: false
 type: The New Developers
 date: 2019-09-25T17:30:00.000Z
 where: 'Mohawk College Fennell Campus, Room EA006'

@@ -11,7 +11,7 @@ author: Rodney
 ---
 For our October workshop we’re putting on a speed interviewing event where we’ll have several hiring managers from local companies run 5-minute mock interviews with attendees, and where you'll be able to sign up for multiple interviews. It’ll be a low-stakes environment perfect for practicing your interviewing skills, though there’s always the chance that a particularly impressive performance could lead to more promising opportunities.
 
-**NOTE**: Because of the limited time and number of interviewers, we can currently only make 28 spots available - if you show up without having registered we can put you on a stand-by list and you’ll be able to listen in on the feedback from the interviewers at the end of the night, but we cannot guarantee participation. 
+**NOTE**: Because of the limited time and number of interviewers, we can currently only make 32 spots available - if you show up without having registered we can put you on a stand-by list and you’ll be able to listen in on the feedback from the interviewers at the end of the night, but we cannot guarantee participation. 
 
 So _please make sure to register as soon as possible if you are interested in this event_.
 

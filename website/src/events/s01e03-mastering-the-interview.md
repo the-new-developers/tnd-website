@@ -17,6 +17,7 @@ So _please make sure to register as soon as possible if you are interested in th
 
 Here is the current list of interviewers:
 
+* [**Paul Cioca**](https://www.linkedin.com/in/paul-cioca-a5644819/) - Lead Developer,  [Caliber Communications](https://calibercommunications.ca/)
 * [**Andrew Holden**](https://ca.linkedin.com/in/holdencreative) - CTO, CXO, and Co-Founder of [Weever Apps](https://weeverapps.com/)
 * [**Chad Ingles**](https://ca.linkedin.com/in/chadingles) - COO and CTO of [Fotaflo](https://www.fotaflo.com/)
 * [**Rob McCann**](https://ca.linkedin.com/in/rob-mccann-0a1185150) - Co-Founder of [Clearcable Networks](http://www.clearcable.ca/) and President of the [Hamilton Technology Centre](http://hamiltontechnologycentre.ca/).

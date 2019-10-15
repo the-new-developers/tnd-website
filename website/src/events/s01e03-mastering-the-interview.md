@@ -1,7 +1,7 @@
 ---
 templateKey: event-post
 title: 's01e03: Mastering the Interview'
-featured: false
+featured: true
 type: The New Developers
 date: 2019-10-30T17:30:00.000Z
 where: 'Mohawk College Fennell Campus, room EA105'

@@ -1,7 +1,7 @@
 ---
 templateKey: event-post
 title: Turning Interviews into Job Offers with John Campbell
-featured: true
+featured: false
 type: The New Developers
 date: 2019-10-10T14:00:00.000Z
 where: 'Room A222, Mohawk College Fennel Campus'

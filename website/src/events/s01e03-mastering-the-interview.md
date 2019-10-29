@@ -11,14 +11,13 @@ author: Rodney
 ---
 For our October workshop we’re putting on a speed interviewing event where we’ll have several hiring managers from local companies run 5-minute mock interviews with attendees, and where you'll be able to sign up for multiple interviews. It’ll be a low-stakes environment perfect for practicing your interviewing skills, though there’s always the chance that a particularly impressive performance could lead to more promising opportunities.
 
-**NOTE**: Because of the limited time and number of interviewers, we can currently only make 28 spots available - if you show up without having registered we can put you on a stand-by list and you’ll be able to listen in on the feedback from the interviewers at the end of the night, but we cannot guarantee participation. 
+**NOTE**: Because of the limited time and number of interviewers, we can currently only make 24 spots available - if you show up without having registered we can put you on a stand-by list and you’ll be able to listen in on the feedback from the interviewers at the end of the night, but we cannot guarantee participation. 
 
 So _please make sure to register as soon as possible if you are interested in this event_.
 
 Here is the current list of interviewers:
 
 * [**Paul Cioca**](https://www.linkedin.com/in/paul-cioca-a5644819/) - Lead Developer,  [Caliber Communications](https://calibercommunications.ca/)
-* [**Andrew Holden**](https://ca.linkedin.com/in/holdencreative) - CTO, CXO, and Co-Founder of [Weever Apps](https://weeverapps.com/)
 * [**Chad Ingles**](https://ca.linkedin.com/in/chadingles) - COO and CTO of [Fotaflo](https://www.fotaflo.com/)
 * [**Rob McCann**](https://ca.linkedin.com/in/rob-mccann-0a1185150) - Co-Founder of [Clearcable Networks](http://www.clearcable.ca/) and President of the [Hamilton Technology Centre](http://hamiltontechnologycentre.ca/).
 * [**BJ Marshall**](https://www.linkedin.com/in/bj-marshall-81262a18/) - Supervising Technical Director and [**Ben Sherwood**](https://www.linkedin.com/in/bensherwood/) - Software Engineer and Systems Adminstrator at [Pipeline Studios](http://www.pipelinestudios.com/)

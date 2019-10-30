@@ -17,7 +17,6 @@ So _please make sure to register as soon as possible if you are interested in th
 
 Here is the current list of interviewers:
 
-* [**Paul Cioca**](https://www.linkedin.com/in/paul-cioca-a5644819/) - Lead Developer,  [Caliber Communications](https://calibercommunications.ca/)
 * [**Chad Ingles**](https://ca.linkedin.com/in/chadingles) - COO and CTO of [Fotaflo](https://www.fotaflo.com/)
 * [**Rob McCann**](https://ca.linkedin.com/in/rob-mccann-0a1185150) - Co-Founder of [Clearcable Networks](http://www.clearcable.ca/) and President of the [Hamilton Technology Centre](http://hamiltontechnologycentre.ca/).
 * [**BJ Marshall**](https://www.linkedin.com/in/bj-marshall-81262a18/) - Supervising Technical Director and [**Ben Sherwood**](https://www.linkedin.com/in/bensherwood/) - Software Engineer and Systems Adminstrator at [Pipeline Studios](http://www.pipelinestudios.com/)

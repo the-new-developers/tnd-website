@@ -3,7 +3,7 @@ templateKey: event-post
 title: 's01e04: How to make the most of your first job'
 featured: true
 type: The New Developers
-date: 2019-11-27T13:00:00.000Z
+date: 2019-11-27T12:00:00.000Z
 where: 'EA105, Seminar Room F (the boardroom)'
 author: Rodney
 ---

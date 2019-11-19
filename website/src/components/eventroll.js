@@ -71,7 +71,7 @@ export default () => (
           filter: {
             frontmatter: {
               templateKey: { eq: "event-post" }
-              date: { gt: "2019-10-01" }
+              date: { gt: "2019-11-01" }
             }
           }
         ) {

@@ -1,6 +1,6 @@
 ---
 templateKey: event-post
-title: 'CSAIT IRL: A Social Event.'
+title: 'CSAIT IRL: A Social Event II: Electric Boogaloo'
 featured: true
 type: The New Developers
 date: 2020-02-05T23:00:00.000Z

@@ -36,11 +36,11 @@ export default function AboutPage() {
         <Typography variant="body1">
           Email us at{" "}
           <a
-            href="mailto:contact@thenewdevelopers.com"
+            href="mailto:NewDevelopers@mohawkcollege.ca"
             target="_blank"
             rel="noopener noreferrer"
           >
-            contact@thenewdevelopers.com
+            newdevelopers@mohawkcollege.ca
           </a>{" "}
           if you have any questions, are interested in getting involved, or
           would like a link to the (unofficial) CSAIT Discord server.

@@ -5,9 +5,52 @@ import Post from "../components/post"
 import { Typography } from "@material-ui/core"
 
 class EventRoll extends React.Component {
+
+  /**
+   * Our GraphQL query will fetch every event post. This method
+   * will take those posts and filter them to return only those events
+   * that will occur on today's date and beyond. 
+   * 
+   * The date for each post is also set in UTC, so passing them into a new Date object 
+   * will convert them to the local time zone, and we will use the toLocaleTimeString and 
+   * toLocalDateString methods to format the date. This is not as elegant as
+   * it might have been with a Javascript date library like moment.js, however
+   * using native Javascript functions avoids the overhead of importing an external
+   * dependency.
+   * 
+   * This method also breaks the single responsibility principle, however the filter is
+   * currently simple enough to justify its inclusion here. Should we need to filter
+   * the posts on other criteria in the future, and be unable to do so in the query itself,
+   * it would be worthwhile to refactor that into its own method.
+   * 
+   * @param { Array } posts The array of posts returned by the GraphQL query.
+   * @returns { Array } The filtered and formatted array of posts.
+   */
+  filterAndFormatPosts = (posts) => {
+    const dateToday = new Date()
+    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
+    const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true}
+    return posts
+      .filter(post => new Date(post.node.frontmatter.date) >= dateToday)
+      .map(post => { 
+        const time = new Date(post.node.frontmatter.date).toLocaleTimeString('en-US', timeOptions)
+        const date = new Date(post.node.frontmatter.date).toLocaleDateString('en-US', dateOptions)
+        return { 
+          ...post, 
+          node: { 
+            ...post.node,
+            frontmatter: {
+              ...post.node.frontmatter,
+              date: time + ' ' + date
+            }
+          },
+        }
+      })
+  }
+
   render() {
     const { data } = this.props
-    const posts = data.allMarkdownRemark.edges
+    const posts = this.filterAndFormatPosts(data.allMarkdownRemark.edges)
 
     // We use Array.prototype.find() here because
     // we are only expecting one featured post.
@@ -16,7 +59,7 @@ class EventRoll extends React.Component {
       posts.find(({ node }) => {
         return node.frontmatter.featured
       })
-    console.log(featuredPost)
+
     return (
       <div>
         <Typography
@@ -71,7 +114,6 @@ export default () => (
           filter: {
             frontmatter: {
               templateKey: { eq: "event-post" }
-              date: { gt: "2019-11-01" }
             }
           }
         ) {
@@ -85,7 +127,7 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "h:mma dddd, MMMM Do YYYY")
+                date
                 where
                 link
                 featured

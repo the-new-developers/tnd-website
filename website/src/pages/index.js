@@ -32,7 +32,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "h:mma dddd, MMMM Do YYYY")
+            date
             where
             link
             featured

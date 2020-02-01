@@ -50,7 +50,10 @@ class EventRoll extends React.Component {
 
   render() {
     const { data } = this.props
-    const posts = this.filterAndFormatPosts(data.allMarkdownRemark.edges)
+
+    // We only want events that haven't happened yet.
+    const dateToday = new Date()
+    const posts = data.allMarkdownRemark.edges.filter(post => new Date(post.node.frontmatter.date) >= dateToday)
 
     // We use Array.prototype.find() here because
     // we are only expecting one featured post.

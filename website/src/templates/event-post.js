@@ -26,6 +26,27 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+/**
+ * We store the date and time for each event in UTC, so this method converts that
+ * to local time. 
+ * 
+ * Passing it into a new Date object will convert it to the local time zone, 
+ * and we will use the toLocaleTimeString and toLocalDateString methods to format the date. 
+ * This is not as elegant as it might have been with a Javascript date library like moment.js, 
+ * however using native Javascript functions avoids the overhead of importing an external
+ * dependency.
+ * 
+ * @param {string} dateUtc The event date in UTC.
+ * @returns {string} The converted and formatted date to be presented in the post.
+ */
+const formatDate = (dateUtc) => {
+  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
+  const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true}
+  const time = new Date(dateUtc).toLocaleTimeString('en-US', timeOptions)
+  const date = new Date(dateUtc).toLocaleDateString('en-US', dateOptions)
+  return time + ' ' + date
+}
+
 export default function EventPost({
   data, // this prop will be injected by the GraphQL query below.
 }) {
@@ -33,6 +54,7 @@ export default function EventPost({
   const { frontmatter, html } = markdownRemark
   const classes = useStyles()
   let path = frontmatter.link
+  const eventWhen = formatDate(frontmatter.date)
 
   // Gatsby seems to hijack all <a> tags and, if they do not begin with http://
   // or https://, appends the path to the domain instead of setting the URL as
@@ -51,7 +73,7 @@ export default function EventPost({
       </Typography>
       <div className={classes.meta}>
         <Typography variant="h6" className={classes.eventInfo}>
-          When: {frontmatter.date}
+          When: {eventWhen}
         </Typography>
         <Typography variant="h6" className={classes.eventInfo}>
           Where: {frontmatter.where}
@@ -84,7 +106,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        date(formatString: "h:mma dddd, MMMM Do YYYY")
+        date
         where
         link
         type

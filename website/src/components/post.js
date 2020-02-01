@@ -43,6 +43,27 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+/**
+ * We store the date and time for each event in UTC, so this method converts that
+ * to local time. 
+ * 
+ * Passing it into a new Date object will convert it to the local time zone, 
+ * and we will use the toLocaleTimeString and toLocalDateString methods to format the date. 
+ * This is not as elegant as it might have been with a Javascript date library like moment.js, 
+ * however using native Javascript functions avoids the overhead of importing an external
+ * dependency.
+ * 
+ * @param {string} dateUtc The event date in UTC.
+ * @returns {string} The converted and formatted date to be presented in the post.
+ */
+const formatDate = (dateUtc) => {
+  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
+  const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true}
+  const time = new Date(dateUtc).toLocaleTimeString('en-US', timeOptions)
+  const date = new Date(dateUtc).toLocaleDateString('en-US', dateOptions)
+  return time + ' ' + date
+}
+
 export default function Post(props) {
   // We can use this to insert the styles defined above.
   const classes = useStyles()
@@ -89,7 +110,7 @@ export default function Post(props) {
         {isEvent ? (
           <div>
             <Typography variant="h6" className={classes.eventInfo}>
-              When: {info.date}
+              When: {formatDate(info.date)}
             </Typography>
             <Typography variant="h6" className={classes.eventInfo}>
               Where: {info.where}

@@ -54,7 +54,6 @@ export default function EventPost({
   const { frontmatter, html } = markdownRemark
   const classes = useStyles()
   let path = frontmatter.link
-  const eventWhen = formatDate(frontmatter.date)
 
   // Gatsby seems to hijack all <a> tags and, if they do not begin with http://
   // or https://, appends the path to the domain instead of setting the URL as
@@ -73,7 +72,7 @@ export default function EventPost({
       </Typography>
       <div className={classes.meta}>
         <Typography variant="h6" className={classes.eventInfo}>
-          When: {eventWhen}
+          When: {formatDate(frontmatter.date)}
         </Typography>
         <Typography variant="h6" className={classes.eventInfo}>
           Where: {frontmatter.where}

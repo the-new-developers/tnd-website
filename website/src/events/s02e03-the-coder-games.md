@@ -6,7 +6,7 @@ type: The New Developers
 date: 2020-03-26T22:00:30.564Z
 where: 'Room H007, Mohawk College Fennel Campus'
 link: >-
-  https://www.eventbrite.com/e/the-new-developers-present-s02e03-the-coder-games-tickets-99308209528
+  https://www.eventbrite.com/e/the-new-developers-presents-s02e03-the-coder-games-tickets-99308209528
 author: Rodney
 ---
 Here’s your chance to skill up in one of the more challenging areas of the job hunt: the technical interview. 

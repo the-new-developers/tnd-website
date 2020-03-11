@@ -3,7 +3,7 @@ templateKey: event-post
 title: >-
   s02e02: Everything You Always Wanted to Know About Freelancing [but were
   afraid to ask]
-featured: true
+featured: false
 type: The New Developers
 date: 2020-03-05T00:00:32.724Z
 where: 'https://youtu.be/oIA-Hi2KR88'

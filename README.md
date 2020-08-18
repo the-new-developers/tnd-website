@@ -135,7 +135,7 @@ Inside the `src` directory you should see:
 We chose to set this site up using Gatsby because there's significant demand for React developers out there, and by contributing to this project you can put a neat little line on your resume that says something like, "experience with React, GraphQL, and static site generation."
 React also has some of [the best documentation among all of the Javascript libraries used to create Single-Page applications (SPAs)](https://reactjs.org/docs/getting-started.html). 
 
-We've also tried to set this site up in a way to be friendly to developers who may not have a lot of experience working with React, but if you ever get stuck or have any questions don't hesitate to reach out to us at thenewdevelopers@mohawkcollege.ca.
+We've also tried to set this site up in a way to be friendly to developers who may not have a lot of experience working with React, but if you ever get stuck or have any questions don't hesitate to reach out to us at newdevelopers@mohawkcollege.ca.
 
 To get started in contributing, check out the `Issues` tab up top. There, you'll find a list of open issues with each having labels that you can filter by. `enhancement` is for feature requests, `bug` is for bugs, and we use `help wanted` to indicate issues that we think shouldn't take a lot of experience to tackle.
 

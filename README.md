@@ -183,7 +183,7 @@ When your PR is approved and merged, that issue will automatically close.
 
 And that's it! If the reviewer of your PR requests any changes, you can make those changes to your local code and push them to your remote branch using the same steps described above - your PR will automatically update.
 
-And again, if you get stuck or have any questions never hesitate to email us at thenewdevelopers@mohawkcollege.ca
+And again, if you get stuck or have any questions never hesitate to email us at newdevelopers@mohawkcollege.ca
 
 ## 🎓 Learning Gatsby
 

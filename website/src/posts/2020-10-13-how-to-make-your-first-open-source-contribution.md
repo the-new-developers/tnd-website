@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: How to make your first open-source contribution
-date: 2020-10-13T21:45:33.164Z
+date: 2020-10-13T21:25:33.164Z
 author: Rodney Barnes
 ---
 Contributing to open source projects can be a great way to show off in an interview - it demonstrates initiative, teamwork, and real-world experience. It's also a great place to start if you have no previous employment history in software development.

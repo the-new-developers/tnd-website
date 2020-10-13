@@ -1,6 +1,6 @@
 ---
 templateKey: event-post
-title: 's03e01: How to contribute to The New Developers website'
+title: 's03e01: Creating ''Opportunities'' on The New Developers website'
 featured: true
 type: The New Developers
 date: 2020-10-21T23:00:00.000Z

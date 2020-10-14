@@ -1,7 +1,7 @@
 ---
 templateKey: event-post
 title: '[CANCELLED] s02e03: THE CODER GAMES'
-featured: true
+featured: false
 type: The New Developers
 date: 1970-01-01T00:00:30.564Z
 where: N/A

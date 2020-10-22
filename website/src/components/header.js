@@ -119,6 +119,17 @@ const Header = () => {
             }}
           />
         </ListItem>
+        <ListItem 
+          button
+          component={Link}
+          to="/opportunities">
+            <ListItemText
+              primary="Opportunities"
+              primaryTypographyProps={{
+                variant: "h6",
+                color: "secondary"
+              }}></ListItemText>
+        </ListItem>
         <ListItem
           button
           component="a"

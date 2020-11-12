@@ -7,7 +7,7 @@ date: 2020-11-19T00:00:41.805Z
 where: twitch.tv/thenewdevelopers
 author: Gabriel E. Gabrie
 ---
-Join The New Developers for an introduction to the Rust programming language, delivered by our returning guest [Jenifer Champagne](https://github.com/JenChampagne) of [Weever Apps](https://weeverapps.com/). She’ll be covering the basics of Rust with a coding tutorial, followed by a live online Q&A session.\
+Join The New Developers for an introduction to the Rust programming language, delivered by our returning guest Jenifer Champagne of [Weever Apps](https://weeverapps.com/). She’ll be covering the basics of Rust with a coding tutorial, followed by a live online Q&A session.\
 You can watch the event live on our [Twitch channel](https://www.twitch.tv/thenewdevelopers) and ask your questions in the chat!\
 \
 Jenifer has worked in the industry for many years and is heavily involved in the Hamilton developer community. Take advantage of this opportunity to ask her questions you may have about the Rust language or anything at all about software development.\

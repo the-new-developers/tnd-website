@@ -39,7 +39,7 @@ class OpportunitiesList extends React.Component {
         const { data } = this.props
         const fromFiles = data === undefined ? [] : data.allMarkdownRemark.edges
 
-        Axios.get(`http://softwarehamilton.com/wp-json/wp/v2/job-listings`)
+        Axios.get(`https://softwarehamilton.com/wp-json/wp/v2/job-listings`)
             .then(result => {
                 const shJobs = result.data.map(job => this.mapSHJobToNode(job))
                 const opportunities = fromFiles

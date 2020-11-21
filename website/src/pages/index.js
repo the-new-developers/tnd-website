@@ -8,12 +8,15 @@ import SEO from "../components/seo"
 export default function IndexPage({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const featuredPost = data.allMarkdownRemark.edges[0] // There should only be one featured event.
+  const dateToday = new Date()
+  const featuredPost = data.allMarkdownRemark.edges && new Date(data.allMarkdownRemark.edges[0].node.frontmatter.date) >= dateToday 
+    ? data.allMarkdownRemark.edges[0] 
+    : null
+
   return (
     <Layout>
       <SEO title="Home" />
-      <EventListItem path={featuredPost.node.fields.slug} info={featuredPost.node} />
-      <div style={{ marginTop: 50 }} />
+      { featuredPost && <EventListItem path={featuredPost.node.fields.slug} info={featuredPost.node} /> }
       <BlogList />
     </Layout>
   )

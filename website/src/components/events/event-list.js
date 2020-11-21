@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
-import Post from "../components/post"
+import EventListItem from "./event-list-item"
 import { Typography } from "@material-ui/core"
 
 class EventList extends React.Component {
@@ -75,7 +75,7 @@ class EventList extends React.Component {
         </Typography>
         {featuredPost ? (
           <div>
-            <Post
+            <EventListItem
               path={featuredPost.node.fields.slug}
               info={featuredPost.node}
             />{" "}
@@ -86,7 +86,7 @@ class EventList extends React.Component {
             return (
               <div key={node.id}>
                 {node.frontmatter.featured ? null : (
-                  <Post path={node.fields.slug} info={node} />
+                  <EventListItem path={node.fields.slug} info={node} />
                 )}
               </div>
             )
@@ -99,7 +99,7 @@ class EventList extends React.Component {
 // propTypes allows us to define what type we expect the props to be.
 // If the props do not conform to their expected type, we will be able
 // to see a warning in the browser's developers tools.
-EventRoll.propTypes = {
+EventList.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -142,6 +142,6 @@ export default () => (
         }
       }
     `}
-    render={data => <EventRoll data={data} />}
+    render={data => <EventList data={data} />}
   />
 )

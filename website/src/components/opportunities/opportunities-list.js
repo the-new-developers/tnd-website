@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import { Typography } from "@material-ui/core"
-import OpportunitiesListItem from "../components/opportunities-list-item"
+import OpportunitiesListItem from "./opportunities-list-item"
 import Axios from "axios"
 
 class OpportunitiesList extends React.Component {

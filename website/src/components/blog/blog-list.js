@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
-import Post from "../components/post"
+import BlogListItem from "./blog-list-item"
 import { Typography } from "@material-ui/core"
 
 class BlogList extends React.Component {
@@ -21,7 +21,7 @@ class BlogList extends React.Component {
           posts.map(({ node }) => {
             return (
               <div key={node.id} style={{ marginTop: "50px" }}>
-                <Post path={node.fields.slug} info={node} />
+                <BlogListItem path={node.fields.slug} info={node} />
               </div>
             )
           })}
@@ -33,7 +33,7 @@ class BlogList extends React.Component {
 // propTypes allows us to define what type we expect the props to be.
 // If the props do not conform to their expected type, we will be able
 // to see a warning in the browser's developers tools.
-BlogRoll.propTypes = {
+BlogList.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -68,6 +68,6 @@ export default () => (
         }
       }
     `}
-    render={data => <BlogRoll data={data} />}
+    render={data => <BlogList data={data} />}
   />
 )

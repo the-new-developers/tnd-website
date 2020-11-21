@@ -1,12 +1,12 @@
 import React from "react"
-import EventRoll from "../components/eventroll"
+import EventList from "../components/events/event-list"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const EventsPage = () => (
   <Layout>
     <SEO title="Events" />
-    <EventRoll />
+    <EventList />
   </Layout>
 )
 

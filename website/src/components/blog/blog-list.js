@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Post from "../components/post"
 import { Typography } from "@material-ui/core"
 
-class BlogRoll extends React.Component {
+class BlogList extends React.Component {
   render() {
     const { data } = this.props
     const posts = data.allMarkdownRemark.edges

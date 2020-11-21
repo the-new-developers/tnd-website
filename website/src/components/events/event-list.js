@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Post from "../components/post"
 import { Typography } from "@material-ui/core"
 
-class EventRoll extends React.Component {
+class EventList extends React.Component {
 
   /**
    * Our GraphQL query will fetch every event post. This method
@@ -51,9 +51,10 @@ class EventRoll extends React.Component {
   render() {
     const { data } = this.props
 
-    // We only want events that haven't happened yet.
-    const dateToday = new Date()
-    const posts = data.allMarkdownRemark.edges.filter(post => new Date(post.node.frontmatter.date) >= dateToday)
+    // // We only want events that haven't happened yet.
+    // const dateToday = new Date()
+    const posts = data.allMarkdownRemark.edges
+      //.filter(post => new Date(post.node.frontmatter.date) >= dateToday)
 
     // We use Array.prototype.find() here because
     // we are only expecting one featured post.

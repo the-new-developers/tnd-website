@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import BlogRoll from "../components/blogroll"
+import BlogList from "../components/blog/blog-list"
 import Layout from "../components/layout"
-import Post from "../components/post"
+import EventListItem from "../components/events/event-list-item"
 import SEO from "../components/seo"
 
 export default function IndexPage({
@@ -12,13 +12,16 @@ export default function IndexPage({
   return (
     <Layout>
       <SEO title="Home" />
-      <Post path={featuredPost.node.fields.slug} info={featuredPost.node} />
+      <EventListItem path={featuredPost.node.fields.slug} info={featuredPost.node} />
       <div style={{ marginTop: 50 }} />
-      <BlogRoll />
+      <BlogList />
     </Layout>
   )
 }
 
+/**
+ * This query retrieves all featured events
+ */
 export const pageQuery = graphql`
   query FeaturedEventQuery {
     allMarkdownRemark(filter: { frontmatter: { featured: { eq: true } } }) {

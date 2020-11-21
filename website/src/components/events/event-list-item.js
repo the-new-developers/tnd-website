@@ -5,7 +5,6 @@ import {
   Button,
   Card,
   CardContent,
-  Divider,
   Typography,
 } from "@material-ui/core"
 
@@ -23,10 +22,6 @@ const useStyles = makeStyles(theme => ({
   },
   date: {
     marginTop: theme.spacing(1),
-  },
-  divider: {
-    background: theme.palette.secondary,
-    marginTop: theme.spacing(5),
   },
   excerpt: {
     marginTop: theme.spacing(2),
@@ -64,15 +59,12 @@ const formatDate = (dateUtc) => {
   return time + ' ' + date
 }
 
-export default function Post(props) {
+export default function EventListItem(props) {
   // We can use this to insert the styles defined above.
   const classes = useStyles()
 
   // This will hold all of our post info.
   const info = props.info.frontmatter
-
-  // We need different information depending on the type of post.
-  const isEvent = info.templateKey === "event-post"
 
   // It makes sense to give our own events priority.
   const isTNDWorkshop = info.type === "The New Developers"
@@ -81,9 +73,11 @@ export default function Post(props) {
   // blog or event rolls.
   let path = props.path
 
+  const dateToday = new Date()
+
   // This is the text above event posts.
   let eventType
-  if (info.featured) {
+  if (info.featured && new Date(info.date) >= dateToday) {
     eventType = "Next Workshop"
   } else if (isTNDWorkshop) {
     eventType = "TND Workshop"
@@ -91,23 +85,17 @@ export default function Post(props) {
     eventType = "Community Event"
   }
 
-  // The button text will vary depending on the post type.
-  let buttonText = isEvent ? "More Info" : "Read More"
-
   return (
     <Card className={classes.card} elevation={0}>
       <CardContent className={classes.content}>
-        {isEvent ? (
-          <Typography variant="overline">{eventType}</Typography>
-        ) : null}
+        <Typography variant="overline" style={{ color: isTNDWorkshop ? "#CC522C" : "#FAFFF7" }}>{eventType}</Typography>
         <Typography
-          variant={isEvent ? "h3" : "h4"}
+          variant="h3"
           component="h3"
           className={classes.title}
         >
           <Link to={props.path}>{info.title}</Link>
         </Typography>
-        {isEvent ? (
           <div>
             <Typography variant="h6" className={classes.eventInfo}>
               When: {formatDate(info.date)}
@@ -116,11 +104,6 @@ export default function Post(props) {
               Where: {info.where}
             </Typography>
           </div>
-        ) : (
-          <Typography variant="overline" className={classes.date}>
-            {info.date}
-          </Typography>
-        )}
         <Typography variant="subtitle1" className={classes.excerpt}>
           {props.info.excerpt}
         </Typography>
@@ -131,10 +114,9 @@ export default function Post(props) {
           color="secondary"
           className={classes.button}
         >
-          {buttonText}
+          More Info
         </Button>
       </CardContent>
-      {info.featured ? <Divider className={classes.divider} /> : null}
     </Card>
   )
 }

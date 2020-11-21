@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import { Typography } from "@material-ui/core"
-import OpportunitiesListItem from "../components/opportunities-list-item"
+import OpportunitiesListItem from "./opportunities-list-item"
 import Axios from "axios"
 
 class OpportunitiesList extends React.Component {
@@ -13,7 +13,7 @@ class OpportunitiesList extends React.Component {
     /**
      * Maps a job post from the Software Hamilton jobs api to an object 
      * that shares the same structure as an opportunities post
-     * @param {The Software Hamilton job post} shJob 
+     * @param {} shJob The Software Hamilton job post
      */
     mapSHJobToNode(shJob) {
         var dateOptions = { year: 'numeric', month: 'long', day: 'numeric'}

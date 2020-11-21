@@ -73,3 +73,30 @@ collections:
         widget: "string",
         hint: "This should be a few characters long to identify you."
       }
+
+  - name: "opportunities"
+    label: "Opportunities"
+    folder: "website/src/opportunities"
+    create: true
+    editor:
+      preview: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+        label: "Template Key",
+        name: "templateKey",
+        widget: hidden,
+        default: "opportunities-post"
+      }
+      - { label: "Title", name: "title", widget: "string", hint: "The job title or name of the opportunity" }
+      - { label: "Publish date", name: "date", widget: datetime }
+      - { label: "Name of Organization", name: "organization", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Show post", name: "show", widget: "boolean", default: true }
+      - { label: "Description", name: "description", widget: "markdown", hint: "Please describe the opportunity" }
+      - { label: "Compensation", name: "compensation", widget: "string", hint: "Is this a salaried position? Volunteer? Is there equit involved?" }
+      - { label: "Contact Information", name: "contactInfo", widget: "text" }
+      - { label: "Organization Website", name: "organizationWebsite", widget: "string", required: false }
+
+
+

@@ -1,8 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { makeStyles } from "@material-ui/core/styles"
-import { Button, Typography } from "@material-ui/core"
+import { Typography } from "@material-ui/core"
 
 export default function SuggestionBox() {
     return (

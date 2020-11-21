@@ -53,6 +53,13 @@ module.exports = {
         path: `${__dirname}/src/events`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `opportunities`,
+        path: `${__dirname}/src/opportunities`
+      }
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-lodash`,

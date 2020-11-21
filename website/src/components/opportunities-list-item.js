@@ -30,7 +30,6 @@ const useStyles = makeStyles(theme => ({
 export default function OpportunitiesListItem(props) {
     const classes = useStyles()
     const opportunityInfo = props.info.frontmatter
-    console.log(opportunityInfo)
     return (
         <Card className={classes.card} elevation={0}>
             <CardContent className={classes.content}>
@@ -69,8 +68,9 @@ export default function OpportunitiesListItem(props) {
                     href={props.path}
                     color="secondary"
                     className={classes.button}
+                    target="_blank"
                 >
-                    Go to posting
+                    Go to external posting
                 </Button>
             )}
             </CardContent>

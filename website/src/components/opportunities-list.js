@@ -46,7 +46,6 @@ class OpportunitiesList extends React.Component {
                     .concat(shJobs)
                     .filter(opp => opp.node.frontmatter.show === true)
                     .sort((a, b) => { return new Date(b.node.frontmatter.date) - new Date(a.node.frontmatter.date)})
-                    
                 this.setState({ opportunities })
             })
     }
@@ -104,6 +103,7 @@ export default () => (
                     date(formatString: "MMMM DD, YYYY")
                     organization
                     location
+                    show
                   }
                 }
               }

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import BlogListItem from "./blog-list-item"
-import { Typography } from "@material-ui/core"
+import { Typography, Divider } from "@material-ui/core"
 
 class BlogList extends React.Component {
   render() {
@@ -10,8 +10,9 @@ class BlogList extends React.Component {
     const posts = data.allMarkdownRemark.edges
     return (
       <div>
+        <Divider style={{ marginTop: 45, color: "#709255"}} />
         <Typography
-          variant="h4"
+          variant="h5"
           component="h2"
           style={{ fontWeight: "300", color: "#FAFFF7" }}
         >

@@ -2,65 +2,39 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import EventListItem from "./event-list-item"
-import { Typography } from "@material-ui/core"
+import { Typography, Divider } from "@material-ui/core"
 
 class EventList extends React.Component {
 
   /**
-   * Our GraphQL query will fetch every event post. This method
-   * will take those posts and filter them to return only those events
-   * that will occur on today's date and beyond. 
-   * 
-   * The date for each post is also set in UTC, so passing them into a new Date object 
-   * will convert them to the local time zone, and we will use the toLocaleTimeString and 
-   * toLocalDateString methods to format the date. This is not as elegant as
-   * it might have been with a Javascript date library like moment.js, however
-   * using native Javascript functions avoids the overhead of importing an external
-   * dependency.
-   * 
-   * This method also breaks the single responsibility principle, however the filter is
-   * currently simple enough to justify its inclusion here. Should we need to filter
-   * the posts on other criteria in the future, and be unable to do so in the query itself,
-   * it would be worthwhile to refactor that into its own method.
-   * 
-   * @param { Array } posts The array of posts returned by the GraphQL query.
-   * @returns { Array } The filtered and formatted array of posts.
+   * Partitions the given events into two arrays: upcoming events and past events.
+   * @param {Array} events The events to partition.
+   * @returns {Array} The partitioned events.
    */
-  filterAndFormatPosts = (posts) => {
+  partitionEvents(events){
+    let upcomingEvents = [], pastEvents = []
     const dateToday = new Date()
-    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
-    const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true}
-    return posts
-      .filter(post => new Date(post.node.frontmatter.date) >= dateToday)
-      .map(post => { 
-        const time = new Date(post.node.frontmatter.date).toLocaleTimeString('en-US', timeOptions)
-        const date = new Date(post.node.frontmatter.date).toLocaleDateString('en-US', dateOptions)
-        return { 
-          ...post, 
-          node: { 
-            ...post.node,
-            frontmatter: {
-              ...post.node.frontmatter,
-              date: time + ' ' + date
-            }
-          },
-        }
-      })
+
+    for (let i = 0; i < events.length; i++){
+      if (new Date(events[i].node.frontmatter.date) >= dateToday)
+        upcomingEvents.push(events[i])
+      else
+        pastEvents.push(events[i])
+    }
+
+    return [upcomingEvents, pastEvents]
   }
 
   render() {
     const { data } = this.props
 
-    // // We only want events that haven't happened yet.
-    // const dateToday = new Date()
-    const posts = data.allMarkdownRemark.edges
-      //.filter(post => new Date(post.node.frontmatter.date) >= dateToday)
+    const [upcomingEvents, pastEvents] = this.partitionEvents(data.allMarkdownRemark.edges)
 
     // We use Array.prototype.find() here because
     // we are only expecting one featured post.
     const featuredPost =
-      posts &&
-      posts.find(({ node }) => {
+      upcomingEvents &&
+      upcomingEvents.find(({ node }) => {
         return node.frontmatter.featured
       })
 
@@ -79,10 +53,25 @@ class EventList extends React.Component {
               path={featuredPost.node.fields.slug}
               info={featuredPost.node}
             />{" "}
+            { upcomingEvents.length > 1 
+              ? 
+              <div>
+                <Divider style={{ marginTop: "50px", color: "#709255"}} /> 
+                <Typography
+                  variant="h5"
+                  component="h3"
+                  style={{ fontWeight: "300", color: "#FAFFF7" }}
+                >
+                  Upcoming Events
+                </Typography>
+              </div>
+              : null 
+            }
           </div>
         ) : null}
-        {posts &&
-          posts.map(({ node }) => {
+        
+        {upcomingEvents &&
+          upcomingEvents.map(({ node }) => {
             return (
               <div key={node.id}>
                 {node.frontmatter.featured ? null : (
@@ -90,6 +79,28 @@ class EventList extends React.Component {
                 )}
               </div>
             )
+        })}
+        { upcomingEvents.length === 0 
+          ? <Typography variant="body1" style={{ fontStyle: "italic", marginTop: "50px" }}>There are no upcoming events currently scheduled.</Typography> 
+          : null}
+        <Divider style={{ marginTop: "50px", color: "#709255"}} />
+        {pastEvents ? 
+          <Typography
+            variant="h5"
+            component="h3"
+            style={{ fontWeight: "300", color: "#FAFFF7" }}
+          >
+            Past Events
+          </Typography> 
+          : null
+        }
+          {pastEvents &&
+            pastEvents.map(({ node }) => {
+              return (
+                <div key={node.id}>
+                  <EventListItem path={node.fields.slug} info={node} />
+                </div>
+              )
           })}
       </div>
     )
@@ -112,9 +123,9 @@ EventList.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-      query EventRollQuery {
+      query EventListQuery {
         allMarkdownRemark(
-          sort: { order: ASC, fields: [frontmatter___date] }
+          sort: { order: DESC, fields: [frontmatter___date] }
           filter: {
             frontmatter: {
               templateKey: { eq: "event-post" }

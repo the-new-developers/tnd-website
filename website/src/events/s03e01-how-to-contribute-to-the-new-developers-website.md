@@ -12,3 +12,5 @@ This will be a live-coding stream with returning guest [Rodney Barnes](https://g
 While the website is built with Gatsby and React, you should be able to follow along if you're familiar with Javascript.
 
 [This blog post](https://thenewdevelopers.com/2020-10-13-how-to-make-your-first-open-source-contribution/) offers some links to get you started with Gatsby and React.
+
+**Update:** [You can watch a recording of the live stream here!](https://www.youtube.com/watch?v=VjBQAefyxNo)

@@ -52,8 +52,8 @@ const useStyles = makeStyles(theme => ({
  * @returns {string} The converted and formatted date to be presented in the post.
  */
 const formatDate = (dateUtc) => {
-  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
-  const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true}
+  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+  const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true }
   const time = new Date(dateUtc).toLocaleTimeString('en-US', timeOptions)
   const date = new Date(dateUtc).toLocaleDateString('en-US', dateOptions)
   return time + ' ' + date
@@ -85,6 +85,19 @@ export default function EventListItem(props) {
     eventType = "Community Event"
   }
 
+  // Gatsby seems to hijack all <a> tags and, if they do not begin with http://
+  // or https://, appends the path to the domain instead of setting the URL as
+  // expected.  
+  let link = info.link
+  if (!link) link = info.where
+
+  // show link if there is a url available 
+  // TODO: is (.) dot sufficient to match any url? 
+  if (link.includes(".")) {
+    if (!link.includes("http")) link = "http://" + link
+    link = <Link to={link}>{info.where}</Link>
+  }
+
   return (
     <Card className={classes.card} elevation={0}>
       <CardContent className={classes.content}>
@@ -92,18 +105,17 @@ export default function EventListItem(props) {
         <Typography
           variant="h3"
           component="h3"
-          className={classes.title}
-        >
+          className={classes.title}>
           <Link to={props.path}>{info.title}</Link>
         </Typography>
-          <div>
-            <Typography variant="h6" className={classes.eventInfo}>
-              When: {formatDate(info.date)}
-            </Typography>
-            <Typography variant="h6" className={classes.eventInfo}>
-              Where: {info.where}
-            </Typography>
-          </div>
+        <div>
+          <Typography variant="h6" className={classes.eventInfo}>
+            When: {formatDate(info.date)}
+          </Typography>
+          <Typography variant="h6" className={classes.eventInfo}>
+            Where: {link}
+          </Typography>
+        </div>
         <Typography variant="subtitle1" className={classes.excerpt}>
           {props.info.excerpt}
         </Typography>

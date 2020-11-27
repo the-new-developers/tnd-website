@@ -10,21 +10,21 @@ author: Rodney
 _Look out! The New Developers’ CSAIT IRL Social is coming!_ \
 Right at the end of exam week.
 
-**__**
+__
 
-**_“But Andrew, we can’t gather for a social… can we?”_**
+_**“But Andrew, we can’t gather for a social… can we?”**_
 
 We’re TND! We’re doing it ONLINE, man!!!\
 We set up a new Discord server with 600 billion rooms for us to play in!
 
 __
 
-**_“But we’ll miss seeing the profs. We’ll miss Brian Minaji telling Andrew he’s old and stuff…”_**
+_**“But we’ll miss seeing the profs. We’ll miss Brian Minaji telling Andrew he’s old and stuff…”**_
 
 The profs are coming, too! We’ll all be drinking & dancing at Club Discord.\
 And get this: when it’s time for Brian to burn Andrew, they’ll be live on [our Twitch stream](https://www.twitch.tv/thenewdevelopers).
 
-
+__
 
 _**"But Andrew, I can't be partying right now! I have to look for a job!!"**_
 
@@ -34,7 +34,7 @@ We'll be inviting industry guests from Hamilton-based tech companies to have a d
 
 __
 
-**_“Wait. If you have the TND Twitch stream going, that means you guys can stream one of your amazing playlists of funky, funky songs like you always do!"_**
+_**“Wait. If you have the TND Twitch stream going, that means you guys can stream one of your amazing playlists of funky, funky songs like you always do!"**_
 
 We'll do you one better...\
 WE'RE GONNA HAVE LIVE DJs!\

@@ -87,17 +87,15 @@ export default function EventListItem(props) {
 
   // Gatsby seems to hijack all <a> tags and, if they do not begin with http://
   // or https://, appends the path to the domain instead of setting the URL as
-  // expected.  
-  let link = info.link
-  if (!link) link = info.where
+  // expected.
+  function checkLink(param) {
+    const someDomain = ["http", "twitch", "www", ".ca", ".com"]
 
-  // show link if there is a url available 
-  // TODO: is (.) dot sufficient to match any url? 
-  if (link.includes(".")) {
-    if (!link.includes("http")) link = "http://" + link
-    link = <Link to={link}>{info.where}</Link>
+    if (!param.includes(" ") && someDomain.some(val => param.includes(val))) {
+      if (!param.includes("http")) param = "http://" + param
+      return param.includes("http") ? <Typography variant="a" component={Link} to={param}>{param}</Typography> : param;
+    } else return param;
   }
-
   return (
     <Card className={classes.card} elevation={0}>
       <CardContent className={classes.content}>
@@ -113,7 +111,7 @@ export default function EventListItem(props) {
             When: {formatDate(info.date)}
           </Typography>
           <Typography variant="h6" className={classes.eventInfo}>
-            Where: {link}
+            Where: {checkLink(info.where)}
           </Typography>
         </div>
         <Typography variant="subtitle1" className={classes.excerpt}>

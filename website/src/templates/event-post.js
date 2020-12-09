@@ -60,14 +60,14 @@ export default function EventPost({
   // expected.
   if (!path) path = frontmatter.where
 
-  // show link if there is a url available 
-  // TODO: is (.) dot sufficient to match any url? 
-  if (path.includes(".")) {
-    if (!path.includes("http")) path = "http://" + path
-    path = <Link to={path}>{frontmatter.where}</Link>
+  function checkLink(param) {
+    const someDomain = ["http", "twitch", "www", ".ca", ".com"]
+
+    if (!param.includes(" ") && someDomain.some(val => param.includes(val))) {
+      if (!param.includes("http")) param = "http://" + param
+      return param.includes("http") ? <Typography variant="a" component={Link} to={param}>{param}</Typography> : param;
+    } else return param;
   }
-
-
 
   return (
     <Layout>
@@ -84,7 +84,7 @@ export default function EventPost({
           When: {formatDate(frontmatter.date)}
         </Typography>
         <Typography variant="h6" className={classes.eventInfo}>
-          Where: {path}
+          Where: {checkLink(path)}
         </Typography>
       </div>
       <Typography variant="body1" className={classes.body}>

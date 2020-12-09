@@ -65,7 +65,7 @@ export default function EventPost({
 
     if (!param.includes(" ") && someDomain.some(val => param.includes(val))) {
       if (!param.includes("http")) param = "http://" + param
-      return param.includes("http") ? <Typography variant="a" component={Link} to={param}>{param}</Typography> : param;
+      return <Typography variant="a" component={Link} to={param}>{param}</Typography>;
     } else return param;
   }
 

@@ -93,7 +93,14 @@ export default function EventListItem(props) {
 
   // show link if there is a url available 
   // TODO: is (.) dot sufficient to match any url? 
-  if (link.includes(".")) {
+  const domains = ["http", "twitch", "www", ".ca", ".com"]
+
+  function checkLink(param) {
+    if (!param.includes(" ") && domains.some(val => param.includes(val))) {
+      if (!param.includes("http")) param = "http://" + param
+      return param.includes("http") ? <Typography variant="a" component={Link} to={param}>{param}</Typography> : param;
+    } else return param;
+  }
     if (!link.includes("http")) link = "http://" + link
     link = <Link to={link}>{info.where}</Link>
   }

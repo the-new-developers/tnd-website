@@ -32,9 +32,14 @@ export default function OpportunitiesPost({
             <Typography variant="h6" className={classes.meta}>Organization: {frontmatter.organization}</Typography>
             <Typography variant="h6">Location: {frontmatter.location}</Typography>
             <Typography variant="h6">Compensation: {frontmatter.compensation}</Typography>
-            <Typography variant="h6">Contact: {frontmatter.contactInfo}</Typography>
+            <Typography variant="h6">Contact:  
+              { frontmatter.contactInfo.includes('.com') || frontmatter.contactInfo.includes('.ca') ? (
+                <a href={frontmatter.contactInfo} target="_blank" rel="noreferrer"> {frontmatter.contactInfo}</a>
+              ) : (frontmatter.contactInfo)}
+            </Typography>
+            <Typography variant="h6">Website: <a href={frontmatter.organizationWebsite} target="_blank" rel="noreferrer">{frontmatter.organizationWebsite}</a></Typography>
             <Typography variant="body1" className={classes.body}>
-                <div dangerouslySetInnterHtml={{ __html: html }} />
+                <span dangerouslySetInnerHTML={{ __html: html }} />
             </Typography>
         </Layout>
     )

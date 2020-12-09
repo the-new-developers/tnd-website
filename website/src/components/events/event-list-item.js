@@ -101,7 +101,10 @@ export default function EventListItem(props) {
               When: {formatDate(info.date)}
             </Typography>
             <Typography variant="h6" className={classes.eventInfo}>
-              Where: {info.where}
+              Where: {
+                info.where.includes('.com') || info.where.includes('.ca') 
+                ? (<a href={info.where} target="_blank" rel="noreferrer">{info.where}</a>)
+                : (info.where)}
             </Typography>
           </div>
         <Typography variant="subtitle1" className={classes.excerpt}>

@@ -75,10 +75,7 @@ export default function EventPost({
           When: {formatDate(frontmatter.date)}
         </Typography>
         <Typography variant="h6" className={classes.eventInfo}>
-          Where: {
-                frontmatter.where.includes('.com') || frontmatter.where.includes('.ca')
-                ? (<a href={frontmatter.where} target="_blank" rel="noreferrer">{frontmatter.where}</a>)
-                : (frontmatter.where)}
+          Where: { frontmatter.where}
         </Typography>
       </div>
       <Typography variant="body1" className={classes.body}>

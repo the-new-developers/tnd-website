@@ -79,7 +79,7 @@ export default function EventPost({
         </Typography>
       </div>
       <Typography variant="body1" className={classes.body}>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <span dangerouslySetInnerHTML={{ __html: html }} />
       </Typography>
       {frontmatter.link ? (
         <Button

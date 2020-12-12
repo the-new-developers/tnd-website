@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { makeStyles } from "@material-ui/core/styles"
 import { Button, Typography } from "@material-ui/core"
+import {checkLink} from "../pages/index"
 
 const useStyles = makeStyles(theme => ({
   body: {
@@ -60,14 +61,18 @@ export default function EventPost({
   // expected.
   if (!path) path = frontmatter.where
 
-  function checkLink(param) {
+ /*  function checkLink(param) {
     const linkElements = ["http", "twitch", "www", ".ca", ".com"]
 
     if (!param.includes(" ") && linkElements.some(e => param.includes(e))) {
-      if (!param.includes("http")) param = "http://" + param
-      return <Typography variant="a" component={Link} to={param}>{param}</Typography>;
-    } else return param;
-  }
+      if (!param.includes("http")) {
+        param = "http://" + param
+      }
+      return <a href={param} target="_blank" rel="noreferrer">{param}</a>;
+    } else {
+      return param;
+    }
+  } */
 
   return (
     <Layout>

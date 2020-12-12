@@ -7,6 +7,7 @@ import {
   CardContent,
   Typography,
 } from "@material-ui/core"
+import {checkLink} from "../../pages/index"
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -87,15 +88,19 @@ export default function EventListItem(props) {
 
   // Gatsby seems to hijack all <a> tags and, if they do not begin with http://
   // or https://, appends the path to the domain instead of setting the URL as
-  function checkLink(param) {
+/*   function checkLink(param) {
     const linkElements = ["http", "twitch", "www", ".ca", ".com"]
 
     if (!param.includes(" ") && linkElements.some(e => param.includes(e))) {
-      if (!param.includes("http")) param = "http://" + param
-      return <Typography variant="a" component={Link} to={param}>{param}</Typography>;
-    } else return param;
-  }
-  
+      if (!param.includes("http")) {
+        param = "http://" + param
+      }
+      return <a href={param} target="_blank" rel="noreferrer">{param}</a>;
+    } else {
+      return param;
+    }
+  } */
+
   return (
     <Card className={classes.card} elevation={0}>
       <CardContent className={classes.content}>

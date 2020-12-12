@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { makeStyles } from "@material-ui/core/styles"
 import { Button, Typography } from "@material-ui/core"
+import { checkLink } from "../pages/index"
 
 const useStyles = makeStyles(theme => ({
   body: {
@@ -40,8 +41,8 @@ const useStyles = makeStyles(theme => ({
  * @returns {string} The converted and formatted date to be presented in the post.
  */
 const formatDate = (dateUtc) => {
-  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
-  const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true}
+  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+  const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true }
   const time = new Date(dateUtc).toLocaleTimeString('en-US', timeOptions)
   const date = new Date(dateUtc).toLocaleDateString('en-US', dateOptions)
   return time + ' ' + date
@@ -55,10 +56,7 @@ export default function EventPost({
   const classes = useStyles()
   let path = frontmatter.link
 
-  // Gatsby seems to hijack all <a> tags and, if they do not begin with http://
-  // or https://, appends the path to the domain instead of setting the URL as
-  // expected.
-  if (path && !path.includes("http")) path = "http://" + path
+  if (!path) path = frontmatter.where
 
   return (
     <Layout>
@@ -75,7 +73,7 @@ export default function EventPost({
           When: {formatDate(frontmatter.date)}
         </Typography>
         <Typography variant="h6" className={classes.eventInfo}>
-          Where: {frontmatter.where}
+          Where: {checkLink(path)}
         </Typography>
       </div>
       <Typography variant="body1" className={classes.body}>
@@ -86,8 +84,7 @@ export default function EventPost({
           variant="contained"
           href={path}
           color="secondary"
-          className={classes.button}
-        >
+          className={classes.button}>
           Register
         </Button>
       ) : null}

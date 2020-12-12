@@ -56,7 +56,6 @@ export const pageQuery = graphql`
 // expected.
 export const checkLink = function (param) {
   const linkElements = ["http", "twitch", "www", ".ca", ".com"]
-
   if (!param.includes(" ") && linkElements.some(e => param.includes(e))) {
     if (!param.includes("http")) {
       param = "http://" + param

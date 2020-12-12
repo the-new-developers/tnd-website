@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { makeStyles } from "@material-ui/core/styles"
 import { Button, Typography } from "@material-ui/core"
-import {checkLink} from "../pages/index"
+import { checkLink } from "../pages/index"
 
 const useStyles = makeStyles(theme => ({
   body: {

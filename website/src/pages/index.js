@@ -9,14 +9,14 @@ export default function IndexPage({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const dateToday = new Date()
-  const featuredPost = data.allMarkdownRemark.edges && new Date(data.allMarkdownRemark.edges[0].node.frontmatter.date) >= dateToday 
-    ? data.allMarkdownRemark.edges[0] 
+  const featuredPost = data.allMarkdownRemark.edges && new Date(data.allMarkdownRemark.edges[0].node.frontmatter.date) >= dateToday
+    ? data.allMarkdownRemark.edges[0]
     : null
 
   return (
     <Layout>
       <SEO title="Home" />
-      { featuredPost && <EventListItem path={featuredPost.node.fields.slug} info={featuredPost.node} /> }
+      { featuredPost && <EventListItem path={featuredPost.node.fields.slug} info={featuredPost.node} />}
       <BlogList />
     </Layout>
   )
@@ -50,3 +50,19 @@ export const pageQuery = graphql`
     }
   }
 `
+
+// Gatsby seems to hijack all <a> tags and, if they do not begin with http://
+// or https://, appends the path to the domain instead of setting the URL as
+// expected.
+export const checkLink = function (param) {
+  const linkElements = ["http", "twitch", "www", ".ca", ".com"]
+
+  if (!param.includes(" ") && linkElements.some(e => param.includes(e))) {
+    if (!param.includes("http")) {
+      param = "http://" + param
+    }
+    return <a href={param} target="_blank" rel="noreferrer">{param}</a>;
+  } else {
+    return param;
+  }
+};

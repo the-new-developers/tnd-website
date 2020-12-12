@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { makeStyles } from "@material-ui/core/styles"
 import { Button, Typography } from "@material-ui/core"
+import {checkLink} from "../pages/index"
 
 const useStyles = makeStyles(theme => ({
   body: {
@@ -55,19 +56,7 @@ export default function EventPost({
   const classes = useStyles()
   let path = frontmatter.link
 
-  // Gatsby seems to hijack all <a> tags and, if they do not begin with http://
-  // or https://, appends the path to the domain instead of setting the URL as
-  // expected.
   if (!path) path = frontmatter.where
-
-  function checkLink(param) {
-    const linkElements = ["http", "twitch", "www", ".ca", ".com"]
-
-    if (!param.includes(" ") && linkElements.some(e => param.includes(e))) {
-      if (!param.includes("http")) param = "http://" + param
-      return <Typography variant="a" component={Link} to={param}>{param}</Typography>;
-    } else return param;
-  }
 
   return (
     <Layout>

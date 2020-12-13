@@ -50,18 +50,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// Gatsby seems to hijack all <a> tags and, if they do not begin with http://
-// or https://, appends the path to the domain instead of setting the URL as
-// expected.
-export const checkLink = function (param) {
-  const linkElements = ["http", "twitch", "www", ".ca", ".com"]
-  if (!param.includes(" ") && linkElements.some(e => param.includes(e))) {
-    if (!param.includes("http")) {
-      param = "http://" + param
-    }
-    return <a href={param} target="_blank" rel="noreferrer">{param}</a>;
-  } else {
-    return param;
-  }
-};

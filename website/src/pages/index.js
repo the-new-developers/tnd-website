@@ -8,9 +8,8 @@ import SEO from "../components/seo"
 export default function IndexPage({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const dateToday = new Date()
-  const featuredPost = data.allMarkdownRemark.edges && new Date(data.allMarkdownRemark.edges[0].node.frontmatter.date) >= dateToday
-    ? data.allMarkdownRemark.edges[0]
+  const featuredPost = data.allMarkdownRemark.edges
+    ? data.allMarkdownRemark.edges.sort((firstEdge, secondEdge) => new Date(secondEdge.node.frontmatter.date) - new Date(firstEdge.node.frontmatter.date))[0]
     : null
 
   return (

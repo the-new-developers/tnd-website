@@ -1,7 +1,7 @@
 ---
 templateKey: event-post
 title: 's04e01: How to network and get a job during COVID'
-featured: true
+featured: false
 type: The New Developers
 date: 2021-02-03T00:00:24.108Z
 where: 'https://www.twitch.tv/thenewdevelopers'
@@ -12,3 +12,7 @@ Getting a job is probably the primary reason we all went into this program, and 
 [Wren Chen](https://twitter.com/wrenzchen) is a UI/UX Developer at Reliq Health, and a 2019 graduate of Sheridan College's Interactive Media Management program. We'll be bringing them [on our Twitch stream](https://www.twitch.tv/thenewdevelopers) next week to ask them about their experience looking for work, the challenges they faced and any advice they might have for us. 
 
 You’re probably familiar with how these events run, so strap on your pajamas and we’ll see you in your office!
+
+\*\*Update\*\*
+
+[Here is a link to Wren's presentation from that evening!](https://docs.google.com/presentation/d/1c7onff4T6gER3aJuyBkmGU7ouDAuot7AoV26hNU-G6s/edit)

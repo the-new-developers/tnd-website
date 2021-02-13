@@ -36,7 +36,7 @@ export default function OpportunitiesPost({
       <Typography variant="h6">Contact: {checkLink(frontmatter.contactInfo)}
       </Typography>
       <Typography variant="h6">Website: <a href={frontmatter.organizationWebsite} target="_blank" rel="noreferrer">{frontmatter.organizationWebsite}</a></Typography>
-      <Typography variant="body1" className={classes.body}>
+      <Typography variant="body1" component="div" className={classes.body}>
         <span dangerouslySetInnerHTML={{ __html: html }} />
       </Typography>
     </Layout>

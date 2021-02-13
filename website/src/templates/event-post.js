@@ -73,7 +73,7 @@ export default function EventPost({
           Where: {checkLink(frontmatter.where)}
         </Typography>
       </div>
-      <Typography variant="body1" className={classes.body}>
+      <Typography variant="body1" component="div" className={classes.body}>
         <span dangerouslySetInnerHTML={{ __html: html }} />
       </Typography>
       {frontmatter.link ? (

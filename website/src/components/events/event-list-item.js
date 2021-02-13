@@ -7,7 +7,7 @@ import {
   CardContent,
   Typography,
 } from "@material-ui/core"
-import { checkLink } from "../../pages/index"
+import { checkLink } from "../../common/check-link"
 
 const useStyles = makeStyles(theme => ({
   button: {

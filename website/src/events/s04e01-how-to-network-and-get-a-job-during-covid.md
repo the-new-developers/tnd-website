@@ -1,7 +1,7 @@
 ---
 templateKey: event-post
 title: 's04e01: How to network and get a job during COVID'
-featured: true
+featured: false
 type: The New Developers
 date: 2021-02-03T00:00:24.108Z
 where: 'https://www.twitch.tv/thenewdevelopers'

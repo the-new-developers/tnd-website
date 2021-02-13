@@ -54,9 +54,6 @@ export default function EventPost({
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
   const classes = useStyles()
-  let path = frontmatter.link
-
-  if (!path) path = frontmatter.where
 
   return (
     <Layout>
@@ -73,7 +70,7 @@ export default function EventPost({
           When: {formatDate(frontmatter.date)}
         </Typography>
         <Typography variant="h6" className={classes.eventInfo}>
-          Where: {checkLink(path)}
+          Where: {checkLink(frontmatter.where)}
         </Typography>
       </div>
       <Typography variant="body1" className={classes.body}>
@@ -82,7 +79,7 @@ export default function EventPost({
       {frontmatter.link ? (
         <Button
           variant="contained"
-          href={path}
+          href={frontmatter.link}
           color="secondary"
           className={classes.button}>
           Register

@@ -1,6 +1,6 @@
 ---
 templateKey: event-post
-title: 'Project FOOBAR: Onboarding'
+title: 'Project FOOBAR: Kickoff!'
 featured: true
 type: The New Developers
 date: 2021-04-30T23:00:00.000Z

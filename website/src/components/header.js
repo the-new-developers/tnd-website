@@ -100,7 +100,7 @@ const Header = () => {
       <Hidden xsDown implementation="css">
         <Link to="/">
           <img
-            src={require("../images/logo-braces50.png")}
+            src={require("../images/logo-braces50.png").default}
             className={classes.image}
             alt="Logo"
           />

@@ -3,7 +3,7 @@ templateKey: event-post
 title: "Project Foobar: Deployment Workshop"
 featured: true
 type: The New Developers
-date: 2021-05-31T23:00:02.439Z
+date: 2021-06-04T23:00:02.439Z
 where: https://bit.ly/tnd-discord
 author: Nick
 ---

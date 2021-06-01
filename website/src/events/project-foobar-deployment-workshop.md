@@ -3,12 +3,10 @@ templateKey: event-post
 title: "Project Foobar: Deployment Workshop"
 featured: true
 type: The New Developers
-date: 2021-05-28T23:00:02.439Z
+date: 2021-05-31T23:00:02.439Z
 where: https://bit.ly/tnd-discord
 author: Nick
 ---
-**UPDATE:** This event will NOT be running at the originally scheduled date/time; we will be rescheduling this soon, and will update this post as soon as we can.
-
 **Date:** June 4, 2021 @ 7 PM
 **Host:** Jenifer Champagne & The New Developers
 

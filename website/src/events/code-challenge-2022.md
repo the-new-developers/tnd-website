@@ -15,11 +15,11 @@ We have a number of coding challenges with questions suitable for everyone. The 
 
 **When**: Wednesday, March 23, 2022 @ 6:30PM
 
-**Where**: Sign up using the Google Form here, and the link will be emailed out the Monday before the event.
+**Where**: Sign up using the [Google Form here](https://forms.gle/PSAoRVzbhHF25K3s7), and the link will be emailed out the Monday before the event.
 
 **What**: Students will be split into teams with other Mohawk students as well as industry professionals as they work through challenges together.  Questions will be presented Kata Challenge style and teams will work together to complete as many challenges as they can within the one hour time limit.
 
-Prizes: Did we mention we have **PRIZES**?! The primary goals of the event are to meet other Mohawk students, network with industry professionals and hopefully learn something new about JavaScript, BUT, we also have **Skip The Dishes gift cards for the winning teams!**
+**Prizes:** Did we mention we have **PRIZES**?! The primary goals of the event are to meet other Mohawk students, network with industry professionals and hopefully learn something new about JavaScript, BUT, we also have **Skip The Dishes gift cards for the winning teams!**
 
 How to get involved:
 

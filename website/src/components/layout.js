@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Container, Hidden, Toolbar } from "@material-ui/core"
-import { createTheme, makeStyles } from "@material-ui/core/styles"
+import { createMuiTheme, makeStyles } from "@material-ui/core/styles"
 import { ThemeProvider } from "@material-ui/styles"
 import Header from "./header"
 
@@ -29,8 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-// Deprecated createMuiTheme is replaced with createTheme
-const theme = createTheme({
+const theme = createMuiTheme({
   overrides: {
     MuiPaper: {
       root: {

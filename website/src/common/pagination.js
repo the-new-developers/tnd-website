@@ -25,6 +25,7 @@ import React from "react";
  * ```
  *
  * // These params must be provided...
+ * @param {count} count total number of items.
  * @param {currentPage} currentPage State variable for current visible page.
  * @param {rowsPerPage} rowsPerPage State variable for items per page.
  * @param {setCurrentPage} setCurrentPage A function to update currentPage.

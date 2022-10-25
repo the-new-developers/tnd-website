@@ -24,7 +24,7 @@ Participants will use the ‘Mob Programming’ approach to help solve coding ch
 8:00 - 8:45 - more mobbing\
 8:45 - 9:00 - event wrap up
 
-**Where**: Digital Creativity Centre (FDCC) (EA 105), Mohawk Fennell Campus
+**Where**: Digital Creativity Centre (DCC) (EA 105), Mohawk Fennell Campus
 
 **How to get involved**: Sign up here - https://forms.gle/e78J5bDeLhH3SoeE7
 

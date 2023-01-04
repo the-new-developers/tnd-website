@@ -2,7 +2,7 @@
 templateKey: event-post
 title: Semester Kick Off - Winter 2023
 featured: true
-type: Community
+type: The New Developers
 date: 2023-01-23T23:30:00.000Z
 where: TBD
 author: TND
